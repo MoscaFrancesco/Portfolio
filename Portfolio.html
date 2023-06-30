@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Main.css" />  
+</head>
+
+<body >
+    <div id="loader" style="display: flex; justify-content: center; align-items: center;">
+        <div id="phrases-container">
+            <p id="phrase" style="font-size: 54px; color:white;">Prima frase</p>
+          </div>
+                
+    </div>
+    <div id="MainPage">
+    <div class="header">
+        <div class="Navbar">
+            <input type="radio" id="radio-1" name="tabsSelection" checked>
+            <label class="tab" for="radio-1">Me</label>
+            <input type="radio" id="radio-2" name="tabsSelection">
+            <label class="tab" for="radio-2">Work</label>
+            <span class="glider"></span>
+        </div>
+    </div>
+
+    <div class="sections" id="sections">
+        <div class="content active" id="content-1">
+            <h2>Contenuto scheda Me</h2>
+            <p>Contenuto relativo alla scheda Me</p>
+        </div>
+
+        <div class="content" id="content-2">
+            <h2>Contenuto scheda Work</h2>
+            <p>Contenuto relativo alla scheda Work</p>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

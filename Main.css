@@ -1,0 +1,161 @@
+body{
+  background-color: #185ee0;
+  margin:0px;
+  --ShowBorder:none;
+}
+
+/* Stili per le sezioni nascondi se non è attiva*/
+.content:not(.active) {
+  display: none;
+}
+
+.content.active {
+  display: block;
+  border:3px var(--ShowBorder) black;
+}
+
+/* Nascondi la barra di scorrimento solo su Chrome, Safari e Opera */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: transparent;
+}
+
+/* Nascondi la barra di scorrimento su Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Nascondi la barra di scorrimento su Safari */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+
+#MainPage{
+  background-color: #185ee0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: none;
+  transform: translateY(100%);
+}
+/* ------------------------------ Stile NavBar ------------------------------ */
+.header{
+  position: relative;
+  top:10px;
+  border:3px var(--ShowBorder) black;
+}
+.Navbar /*Settings*/{
+    --tab-width:100px;
+    --tab-height:50px;
+    --tab-margin:5px;
+}
+
+.Navbar {
+  display: flex;
+  width:calc(var(--tab-width)*2);
+  height:var(--tab-height);
+  position: relative;
+  background-color: white;
+  left: 50%;
+  transform:translateX(-50%);
+  padding: var(--tab-margin);
+  border-radius: 99px;
+
+}
+
+.Navbar * {/*tutti gli elementi della navbar sono messi in primo piano*/
+  z-index: 2; 
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--tab-height);
+    width: var(--tab-width);
+    color: black;
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+
+.header input[type="radio"] { /* si applica a tutti gli input radio nel container*/
+  display: none;
+}
+
+.header input[type="radio"]:checked + label{ 
+  color: #185ee0;
+}
+
+.header input[type="radio"]:checked + .tab { 
+    color: #185ee0;
+  }
+
+.header input[id="radio-1"]:checked ~ .glider {
+    transform: translateY(-50%) translateX(0%);}
+
+.header input[id="radio-2"]:checked ~ .glider {
+    transform: translateY(-50%) translateX(100%);}
+
+.glider {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  height: var(--tab-height);
+  width: var(--tab-width);
+  background-color: #185ee074;
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+
+
+
+
+/* --------------------------------- Loader --------------------------------- */
+#loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  z-index: 10;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-down-sections{
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
