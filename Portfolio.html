@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Main.css" />  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/EasePack.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.11.1/simple-lightbox.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Includi il CSS di Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Includi il CSS di SimpleLightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.11.1/simplelightbox.min.css">
+
+</head>
+
+
+<body>
+
+    <!-- ------------------------------- Loader -------------------------------- -->
+    <!-- ------------------------------- Loader -------------------------------- -->
+    <!-- ------------------------------- Loader -------------------------------- -->
+  
+    <div id="loader" style="display: flex; justify-content: center; align-items: center;">
+
+        <div id="phrases-container">
+            <p id="phrase" style="font-size: 54px; color:white;">Prima frase</p>
+          </div>
+
+          <div class="rounded-div-wrap bottom" style="height: 0.0053vh;">
+            <div class="rounded-div"></div>
+        </div>
+    </div>
+
+    <!-- ------------------------------- Header -------------------------------- -->
+    <!-- ------------------------------- Header -------------------------------- -->
+    <!-- ------------------------------- Header -------------------------------- -->
+
+    <header class="header" id="Header">
+
+        <!-- ------------------------------- NavBar -------------------------------- -->
+        <nav class="NavbarHeader" >
+
+
+            <input type="radio" id="radio-1" name="tabsSelection" checked>
+            <label class="tab" for="radio-1">Me</label>
+            <input type="radio" id="radio-2" name="tabsSelection">
+            <label class="tab" for="radio-2">Work</label>
+            <span  class="glider"></span>
+        </nav>
+
+        <!-- ---------------------------- Social Button ---------------------------- -->     
+        <div class="OuterMagneticRange" style="position: absolute; left: 30px; top:10px">
+            <div data-strength="75" data-strength-text="50" style=" position:absolute; left:0px; top:0px;"  class="BtnHeader magnetic" id="SocialButton" style="display: block">
+
+
+                <svg class="MagneticChild" id="Social-icon" viewBox="0,0,256,256" width="30px" height="30px" fill-rule="nonzero" class="instagram"><g fill-rule="nonzero" stroke="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+                
+                <p style=" position: absolute; white-space: nowrap; left: 60px; width:80px; top: 4px; bottom:20px; text-align: center;">Follow Me</p>
+                
+                <div class="Socialcard">
+                    <img class="card-photo" id="card-photo" src="./Resources/Mati.jpg"></img>
+                    <div class="card-title">Mati Ruffino <br>
+                        <span>Artist &amp; Piccione</span>
+                    </div>
+                    <div class="card-socials" id="card-socials">
+                        <button class="card-socials-btn facebook">
+                            <svg class="icon"  width="24" viewBox="0 0 24 24" id="Layer_21" height="24" data-name="Layer 21"><title></title><path d="M16.75,9H13.5V7a1,1,0,0,1,1-1h2V3H14a4,4,0,0,0-4,4V9H8v3h2v9h3.5V12H16Z"></path></svg>
+                        </button>
+                        <button class="card-socials-btn github">
+                            <svg viewBox="0 0 24 24" height="33" width="33" ><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                        </button>
+                        <button class="card-socials-btn linkedin">
+                            <svg height="512" viewBox="0 0 512 512" width="512" ><path d="m51.326 185.85h90.011v270.872h-90.011zm45.608-130.572c-30.807 0-50.934 20.225-50.934 46.771 0 26 19.538 46.813 49.756 46.813h.574c31.396 0 50.948-20.814 50.948-46.813-.589-26.546-19.551-46.771-50.344-46.771zm265.405 124.209c-47.779 0-69.184 26.28-81.125 44.71v-38.347h-90.038c1.192 25.411 0 270.872 0 270.872h90.038v-151.274c0-8.102.589-16.174 2.958-21.978 6.519-16.174 21.333-32.923 46.182-32.923 32.602 0 45.622 24.851 45.622 61.248v144.926h90.024v-155.323c0-83.199-44.402-121.911-103.661-121.911z"></path></svg>
+                        </button>
+                    
+                    </div>
+                </div>
+                
+            </div>
+        </div>  
+
+
+        <!-- ----------------------------- MenuButton ------------------------------ -->
+        <div class="OuterMagneticRange" style="position: absolute; right: 30px; top:10px">
+        <div data-strength="75" data-strength-text="50" style=" position:absolute; top:0px; right:0px; "  class="BtnHeader magnetic" id="MenuButton" >
+
+
+
+            <svg  class="MagneticChild" width="30" viewBox="0 0 20 20" height="30" fill="none" id="MenuButton-icon" >
+                <g  stroke-width="1.5" stroke-linecap="round" stroke="#000000">
+                    <circle r="2.5" cy="10" cx="10"></circle>
+                    <path fill-rule="evenodd" d="m8.39079 2.80235c.53842-1.51424 2.67991-1.51424 3.21831-.00001.3392.95358 1.4284 1.40477 2.3425.97027 1.4514-.68995 2.9657.82427 2.2758 2.27575-.4345.91407.0166 2.00334.9702 2.34248 1.5143.53842 1.5143 2.67996 0 3.21836-.9536.3391-1.4047 1.4284-.9702 2.3425.6899 1.4514-.8244 2.9656-2.2758 2.2757-.9141-.4345-2.0033.0167-2.3425.9703-.5384 1.5142-2.67989 1.5142-3.21831 0-.33914-.9536-1.4284-1.4048-2.34247-.9703-1.45148.6899-2.96571-.8243-2.27575-2.2757.43449-.9141-.01669-2.0034-.97028-2.3425-1.51422-.5384-1.51422-2.67994.00001-3.21836.95358-.33914 1.40476-1.42841.97027-2.34248-.68996-1.45148.82427-2.9657 2.27575-2.27575.91407.4345 2.00333-.01669 2.34247-.97026z" clip-rule="evenodd"></path>
+                </g>
+            </svg>  
+
+            <p style="white-space: nowrap; position:absolute; right: 60px; width:80px; margin-top: 20px; text-align: center;">Settings</p>
+            
+            <div class="cardMenu">
+                <div class="item item--1">
+                  <svg height="24" width="24" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"></path><path fill="rgba(149,149,255,1)" d="M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path></svg>
+                  <span class="quantity"> 90+ </span>
+                  <span class="text text--1"> Icons </span>
+                </div>
+                <div class="item item--2">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0L24 0 24 24 0 24z"></path><path d="M16 16c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM6 12c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10 6c-.552 0-1 .448-1 1s.448 1 1 1 1-.448 1-1-.448-1-1-1zM6 14c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm8.5-12C17.538 2 20 4.462 20 7.5S17.538 13 14.5 13 9 10.538 9 7.5 11.462 2 14.5 2zm0 2C12.567 4 11 5.567 11 7.5s1.567 3.5 3.5 3.5S18 9.433 18 7.5 16.433 4 14.5 4z" fill="rgba(252,161,71,1)"></path></svg>    <span class="quantity"> 70+ </span>
+                  <span class="text text--2"> Illustrations </span>
+                </div>
+                <div class="item item--3">
+                  <svg height="24" width="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path fill="rgba(66,193,110,1)" d="M20.083 15.2l1.202.721a.5.5 0 0 1 0 .858l-8.77 5.262a1 1 0 0 1-1.03 0l-8.77-5.262a.5.5 0 0 1 0-.858l1.202-.721L12 20.05l8.083-4.85zm0-4.7l1.202.721a.5.5 0 0 1 0 .858L12 17.65l-9.285-5.571a.5.5 0 0 1 0-.858l1.202-.721L12 15.35l8.083-4.85zm-7.569-9.191l8.771 5.262a.5.5 0 0 1 0 .858L12 13 2.715 7.429a.5.5 0 0 1 0-.858l8.77-5.262a1 1 0 0 1 1.03 0zM12 3.332L5.887 7 12 10.668 18.113 7 12 3.332z"></path></svg>
+                  <span class="quantity"> 150+ </span>
+                  <span class="text text--3"> Components </span>
+                </div>
+                <div class="item item--4">
+                  <svg height="24" width="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path fill="rgba(220,91,183,1)" d="M12 20h8v2h-8C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10a9.956 9.956 0 0 1-2 6h-2.708A8 8 0 1 0 12 20zm0-10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></svg>
+                  <span class="quantity"> 30+ </span>
+                  <span class="text text--4"> Animations </span>
+                </div>
+              </div>
+
+        </div> 
+        </div>
+    </header>
+
+
+    <!-- ------------------------------- Sezioni ------------------------------- -->
+    <!-- ------------------------------- Sezioni ------------------------------- -->
+    <!-- ------------------------------- Sezioni ------------------------------- -->
+
+    <main class="sections" id="sections">
+        <section class="content active" id="content-1">
+            <!-- ---------------------------- Welcome Page ----------------------------- -->
+            <!-- ---------------------------- Welcome Page ----------------------------- -->
+            <!-- ---------------------------- Welcome Page ----------------------------- -->
+
+
+            <div class="WelcomeSlider">
+            </div>
+
+
+
+            <div id="OtherContent">
+                <p class="LabelDivisore">Welcome to my Portfolio</p>
+                <div class="divisore"></div>
+
+                <!-- -------------------------------- First -------------------------------- -->
+                <div class="First">
+
+                    <div class="row">
+                      <div class="col-md-6 parallax" id="colMD6-img">
+                        <span>
+                            <img src="Resources/Mati3.jpg" alt="Immagine">
+                        </span>
+                      </div>
+
+                      <div class="col-md-6">
+                        <h3>Hi I’m Matilde Ruffino,
+                            Artist & Pigeon
+                        </h3>
+                        <p>Il mio lavoro è principalmente incentrato sulla modellazione tridimensionale, texture e rendering. Mi piace esplorare le creature con un tocco di surrealismo oscuro per personaggi e produzioni.<br><br>
+                            Attualmente sono uno studente di design multimediale interattivo a Istanbul, attualmente lavoro come freelance e sto cercando opportunità di stage.
+                        </p>
+
+                      </div>
+                    </div>
+                </div>
+
+                <p class="LabelDivisore" style="text-align:right; ">About Me</p>
+                <div class="divisore"></div>
+
+                <!-- ------------------------------ About Me ------------------------------- -->
+                <div class="AboutMe">
+                    <div class="container mt-4 ">
+                        <div class="row  ">
+                          <div class="col-md-4 mb-3">
+                            <div class="card parallax">
+                              <span>
+                                <img src="Resources/Mati1.png"  style="transform: scale(1.8); position: relative; margin-top: 20%;" class="card-img-top" alt="Image 1">
+                              </span>
+                              <div class="card-body">
+                                <h3 class="card-title">Lavoro</h3>
+                                <p class="card-text">Durante il mio percorso di studi, ho avuto la fortuna di svolgere diverse esperienze lavorative che mi hanno permesso di mettere in pratica le competenze acquisite. Ho lavorato come stagista presso diverse aziende, dove ho avuto l'opportunità di contribuire attivamente a progetti significativi.</p>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="col-md-4 mb-3 ">
+                            <div class="card parallax">
+                              <span>
+                                <img src="Resources/Mati4.jpg"   style="transform: scale(1.1);" class="card-img-top" alt="Image 2">
+                              </span>
+                              <div class="card-body">
+                                <h3 class="card-title">Studio</h3>
+                                <p class="card-text">Nel mio tempo libero, mi dedico a diverse attività che mi consentono di rilassarmi e sviluppare ulteriormente le mie passioni. Una delle mie attività preferite è la fotografia, che mi permette di catturare momenti unici e di esprimere la mia creatività.
+                                  Lo studio rappresenta una parte fondamentale della mia vita.
+                                  </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <div class="card parallax">
+                              <span>
+                                <img src="Resources/Mati2.jpg" style="transform: scale(1.1);" class="card-img-top" alt="Image 3">
+                              </span>
+                              <div class="card-body">
+                                <h3 class="card-title">Tempo Libero</h3>
+                                <p class="card-text">Lo studio rappresenta una parte fondamentale della mia vita e mi dedico con impegno e passione a conseguire risultati eccellenti. 
+                                  Durante il mio percorso accademico, ho sempre cercato di mantenere un equilibrio tra lo studio e le altre attività, in modo da garantire il massimo rendimento. </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                
+                <p class="LabelDivisore"  >My concept of Art</p>
+                <div class="divisore"></div>
+
+                <!-- --------------------------- Frasea Celebre ---------------------------- -->
+                <div class="FraseCelebre">
+                  <h1>Se l'umanità non esiste, allora non esiste neanche l'arte</h1>
+                  <p>Frida Kahlo</p>
+                </div>
+
+
+                <p class="LabelDivisore" style="text-align:right; margin-top: 6vh;">I'm good at</p>
+                <div class="divisore"></div>
+
+            </div>
+
+        </section>
+                
+        <section class="content" id="content-2">
+
+            
+            <div class="IntroWorks">
+              
+            </div>
+            
+            <section class="OtherContentWork">
+
+              <p class="LabelDivisore">Animations</p>
+              <div class="divisore"></div>
+
+              <div class="AnimationGrid">
+                <div class="First-Frame"></div>
+                <div class="Second-Frame"></div>
+                <div class="Third-Frame"></div>
+                <div class="Video"></div>
+                <div class="Text"></div>
+              </div>
+  
+              
+              <p class="LabelDivisore" style="text-align:right; ">Comics</p>
+              <div class="divisore"></div>
+
+              <div class="ComicsGrid">
+                <div class="FirstPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.1.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.1.png" alt="Didascalia">
+                    </a>
+                  </div>
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.2.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.2.png">
+                    </a>
+                  </div>                
+                </div>
+                <div class="SecondPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.3.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.3.png">
+                    </a>
+                  </div>                  
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.4.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.4.png">
+                    </a>
+                  </div>
+                </div>
+                <div class="ThirdPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.5.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.5.png">
+                    </a>
+                  </div>
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.6.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.6.png">
+                    </a>
+                  </div>
+                </div>
+                <div class="ForthPage comicsPages">
+                  <div class="zoomItem">
+                    <a href="Resources/Disegni/Fumetto/Pt.7.png">                  
+                      <img src="Resources/Disegni/Fumetto/Pt.7.png">
+                    </a>
+                  </div>
+                </div>
+                <div class="ComicsText comicsPages">
+                  Spiega sto fumetto vah
+                </div>
+              </div>
+  
+  
+              <p class="LabelDivisore">Illustrations</p>
+              <div class="divisore"></div>
+  
+  
+              <p class="LabelDivisore" style="text-align:right; ">Cartoons</p>
+              <div class="divisore"></div>
+
+              <div class="CartoonGrid">
+                <div class="FirstCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Cartoons/1.jpg">                  
+                      <img src="Resources/Disegni/Cartoons/1.jpg">
+                    </a>
+                  </div> 
+                </div>
+                <div class="SecondCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Cartoons/2.jpg">                  
+                      <img src="Resources/Disegni/Cartoons/2.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ThirdCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Cartoons/3.png">                  
+                      <img src="Resources/Disegni/Cartoons/3.png">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ForthCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Cartoons/Pt.1.jpg">                  
+                      <img src="Resources/Disegni/Cartoons/Pt.1.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="FifthCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Cartoons/Pt2.jpg">                  
+                      <img src="Resources/Disegni/Cartoons/Pt2.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="SixthCartoon">
+                  <div class="zoomItemCartoon">
+                    <a href="Resources/Disegni/Cartoons/Pt3.jpg">                  
+                      <img src="Resources/Disegni/Cartoons/Pt3.jpg">
+                    </a>
+                  </div>                 
+                </div>
+              </div>
+  
+  
+              <p class="LabelDivisore">Sketch</p>
+              <div class="divisore"></div>
+
+              <div class="SketchGrid">
+                <div class="FirstSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Sketch/1.jpg">                  
+                      <img src="Resources/Disegni/Sketch/1.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="SecondSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Sketch/2.jpg">                  
+                      <img src="Resources/Disegni/Sketch/2.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ThirdSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Sketch/3.jpg">                  
+                      <img src="Resources/Disegni/Sketch/3.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="ForthSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Sketch/4.jpg">                  
+                      <img src="Resources/Disegni/Sketch/4.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="FifthSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Sketch/5.jpg">                  
+                      <img src="Resources/Disegni/Sketch/5.jpg">
+                    </a>
+                  </div>                 
+                </div>
+                <div class="SixthSketch">
+                  <div class="zoomItemSketch">
+                    <a href="Resources/Disegni/Sketch/6.jpg">                  
+                      <img src="Resources/Disegni/Sketch/6.jpg">
+                    </a>
+                  </div>                 
+                </div>
+              </div>
+
+            </section>
+        </section>
+
+        <div class="transition-overlay" id="overlay"></div>
+    </main>
+
+    <!-- ------------------------------- footer -------------------------------- -->
+    <!-- ------------------------------- footer -------------------------------- -->
+    <footer style="height: 60vh; width: 100%; background-color: #20232c;">
+      ciao
+    </footer>
+    <!-- ------------------------------- footer -------------------------------- -->
+    <script defer src="Main.js"></script>
+
+</body>
+
+</html>
