@@ -350,20 +350,26 @@ $(document).ready(function() {
     initSocialButton()
     initChangeSection()
     initMenuButton()
-  
-    //Section 1
+
+
+  if (!navigator.userAgent.match(/(iPhone|Android)/i)) {
+
     setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
-      //initSmoothScroll()
-      //initParallax()   
+      initSmoothScroll()
+      initParallax()   
     }, 2300);
+        //Common
+    initMagneticButtons()
+    initLinks()
+  } 
+    //Section 1
+
 
     //Works
     initsimpleLightbox()
 
-    //Common
-    initMagneticButtons()
-    initLinks()
+
 
 });
 
