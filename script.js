@@ -352,17 +352,22 @@ $(document).ready(function() {
     initMenuButton()
 
 
-  if (screen.width > 600) {
+if (screen.width <= 600) {
 
-    setTimeout(function() { //run after the loader 
-      $("body").css("overflow", "visible");
-      initSmoothScroll()
-      initParallax()   
-    }, 2300);
-        //Common
-    initMagneticButtons()
-    initLinks()
-  } 
+  setTimeout(function() { //run after the loader 
+    $("body").css("overflow", "visible");
+    initSmoothScroll()
+    initParallax()   
+  }, 2300);
+      //Common
+  initMagneticButtons()
+  initLinks()
+} 
+else{
+  setTimeout(function() { //run after the loader 
+    $("body").css("overflow", "visible");
+  }, 2300);
+}
     //Section 1
 
 
