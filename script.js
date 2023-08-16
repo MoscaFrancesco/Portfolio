@@ -352,7 +352,7 @@ $(document).ready(function() {
     initMenuButton()
 
 
-  if (!navigator.userAgent.match(/(iPhone|Android)/i)) {
+  if (screen.width > 600) {
 
     setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
