@@ -357,8 +357,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Tablet|Window
   } else {
     setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
-      initSmoothScroll()
-      initParallax()   
+      //initSmoothScroll()
+      //initParallax()   
     }, 2300);
         //Common
     initMagneticButtons()
