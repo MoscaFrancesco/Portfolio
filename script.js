@@ -351,7 +351,7 @@ $(document).ready(function() {
   initMenuButton()
 
 
-if (screen.width <= 768) {
+if (screen.width >= 768) {
 
   setTimeout(function() { //run after the loader 
     $("body").css("overflow", "visible");
