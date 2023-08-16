@@ -164,9 +164,7 @@ function initMenuButton() {
 /* ------------------------------ First Section ----------------------------- */
 
 function initSmoothScroll(){
-  const lenis = new Lenis({
-    smoothTouch: true
-  });
+  const lenis = new Lenis();
 
 lenis.on('scroll', (e) => {
   console.log(e)
@@ -341,18 +339,19 @@ function initLinks(){
 
 
 // Fire all scripts on page load
+// Fire all scripts on page load
 $(document).ready(function() {
-    //loader
-    initLoader()
+  //loader
+  initLoader()
 
-    //header
-    initHeader()
-    initSocialButton()
-    initChangeSection()
-    initMenuButton()
+  //header
+  initHeader()
+  initSocialButton()
+  initChangeSection()
+  initMenuButton()
 
 
-if (screen.width <= 600) {
+if (screen.width <= 768) {
 
   setTimeout(function() { //run after the loader 
     $("body").css("overflow", "visible");
@@ -368,16 +367,12 @@ else{
     $("body").css("overflow", "visible");
   }, 2300);
 }
-    //Section 1
+  //Section 1
 
 
-    //Works
-    initsimpleLightbox()
-
-
-
+  //Works
+  initsimpleLightbox()
 });
-
 
 //beforeUnload
 $(window).on('beforeunload', () => window.scrollTo(0, 0));
