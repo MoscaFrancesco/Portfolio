@@ -354,8 +354,8 @@ $(document).ready(function() {
     //Section 1
     setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
-      initSmoothScroll()
-      initParallax()   
+      //initSmoothScroll()
+      //initParallax()   
     }, 2300);
 
     //Works
