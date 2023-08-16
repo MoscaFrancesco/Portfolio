@@ -165,7 +165,7 @@ function initMenuButton() {
 
 function initSmoothScroll(){
   const lenis = new Lenis({
-    smoothTouch: true
+    smoothTouch: false
   });
 
 lenis.on('scroll', (e) => {
