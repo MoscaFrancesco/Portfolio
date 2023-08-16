@@ -350,7 +350,7 @@ $(document).ready(function() {
   initChangeSection()
   initMenuButton()
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Android Tablet|Microsoft Surface/i.test(navigator.userAgent)) {
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Tablet|Windows Phone|Touch|Tablet PC/i.test(navigator.userAgent)) {
   setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
     }, 2300);
