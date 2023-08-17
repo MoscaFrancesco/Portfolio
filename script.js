@@ -353,7 +353,7 @@ $(document).ready(function() {
   setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
       initSmoothScroll()
-      initParallax() 
+      //initParallax() 
       initMagneticButtons()
       initLinks()
       
