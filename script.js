@@ -350,20 +350,14 @@ $(document).ready(function() {
   initChangeSection()
   initMenuButton()
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Tablet|Windows Phone|Touch|Tablet PC/i.test(navigator.userAgent)) {
   setTimeout(function() { //run after the loader 
       $("body").css("overflow", "visible");
+      initSmoothScroll()
+      initParallax() 
+      initMagneticButtons()
+      initLinks()
+      
     }, 2300);
-  } else {
-    setTimeout(function() { //run after the loader 
-      $("body").css("overflow", "visible");
-      //initSmoothScroll()
-      //initParallax()   
-    }, 2300);
-        //Common
-    initMagneticButtons()
-    initLinks()
-  }
   
   //Section 1
 
