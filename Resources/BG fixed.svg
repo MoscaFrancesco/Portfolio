@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1440" height="560" preserveAspectRatio="none" viewBox="0 0 1440 560">
+    <g mask="url(&quot;#SvgjsMask1159&quot;)" fill="none">
+        <rect width="1440" height="560" x="0" y="0" fill="#20232c"></rect>
+        <path d="M1087.47 530.49 L1121.48 602.6L1155.5884384616725 515.4315615383275z" fill="rgba(88, 135, 216, 1)"></path>
+        <rect width="84" height="84" clip-path="url(&quot;#SvgjsClipPath1160&quot;)" x="883.94" y="456.36" fill="url(&quot;#SvgjsPattern1161&quot;)" transform="rotate(37.73, 925.94, 498.36)"></rect>
+        <path d="M385.86 65.18 L421.98 118.80000000000001L433.45758486729227 62.452415132707785z" stroke="rgba(244, 137, 48, 1)" stroke-width="1.08" stroke-dasharray="2, 2"></path>
+        <rect width="300" height="300" clip-path="url(&quot;#SvgjsClipPath1162&quot;)" x="70.59" y="338.48" fill="url(&quot;#SvgjsPattern1163&quot;)" transform="rotate(132.83, 220.59, 488.48)"></rect>
+        <rect width="159.35999999999999" height="159.35999999999999" clip-path="url(&quot;#SvgjsClipPath1164&quot;)" x="283.43" y="-42.48" fill="url(&quot;#SvgjsPattern1165&quot;)" transform="rotate(20.87, 363.11, 37.2)"></rect>
+        <path d="M346.39 685.07 L402.69 711.75L330.95095976216066 741.9990402378394z" stroke="rgba(244, 137, 48, 1)" stroke-width="1"></path>
+        <rect width="60" height="60" clip-path="url(&quot;#SvgjsClipPath1166&quot;)" x="892.14" y="12.59" fill="url(&quot;#SvgjsPattern1167&quot;)" transform="rotate(296.05, 922.14, 42.59)"></rect>
+        <rect width="317.4" height="317.4" clip-path="url(&quot;#SvgjsClipPath1168&quot;)" x="1188.65" y="-36.78" fill="url(&quot;#SvgjsPattern1169&quot;)" transform="rotate(283.14, 1347.35, 121.92)"></rect>
+        <rect width="60" height="60" clip-path="url(&quot;#SvgjsClipPath1170&quot;)" x="1104.49" y="329.61" fill="url(&quot;#SvgjsPattern1171&quot;)" transform="rotate(332.88, 1134.49, 359.61)"></rect>
+        <rect width="122" height="122" clip-path="url(&quot;#SvgjsClipPath1172&quot;)" x="75.48" y="-53.7" fill="url(&quot;#SvgjsPattern1173&quot;)" transform="rotate(204.23, 136.48, 7.3)"></rect>
+        <path d="M19.13 469.64a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM3.97 464.51a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM-11.18 459.38a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM-26.34 454.25a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM54.57 464.75a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM39.41 459.62a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM24.26 454.49a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59zM9.1 449.36a5.6 5.6 0 1 0-10.61-3.59 5.6 5.6 0 1 0 10.61 3.59z" stroke="rgba(106, 214, 137, 1)" stroke-width="1.23" stroke-dasharray="3, 2"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask1159">
+            <rect width="1440" height="560" fill="#ffffff"></rect>
+        </mask>
+        <pattern x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" id="SvgjsPattern1161">
+            <path d="M3 1L3 5M1 3L5 3" stroke="rgba(244, 137, 48, 1)" fill="none" stroke-width="1.89"></path>
+        </pattern>
+        <clipPath id="SvgjsClipPath1160">
+            <circle r="21" cx="925.94" cy="498.36"></circle>
+        </clipPath>
+        <pattern x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" id="SvgjsPattern1163">
+            <path d="M0 6L3 0L6 6" stroke="rgba(88, 135, 216, 1)" fill="none"></path>
+        </pattern>
+        <clipPath id="SvgjsClipPath1162">
+            <circle r="75" cx="220.59" cy="488.48"></circle>
+        </clipPath>
+        <pattern x="0" y="0" width="6.64" height="6.64" patternUnits="userSpaceOnUse" id="SvgjsPattern1165">
+            <path d="M0 6.64L3.32 0L6.64 6.64" stroke="rgba(106, 214, 137, 1)" fill="none"></path>
+        </pattern>
+        <clipPath id="SvgjsClipPath1164">
+            <circle r="39.839999999999996" cx="363.11" cy="37.2"></circle>
+        </clipPath>
+        <pattern x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" id="SvgjsPattern1167">
+            <path d="M0 6L3 0L6 6" stroke="rgba(88, 135, 216, 1)" fill="none"></path>
+        </pattern>
+        <clipPath id="SvgjsClipPath1166">
+            <circle r="15" cx="922.14" cy="42.59"></circle>
+        </clipPath>
+        <pattern x="0" y="0" width="317.4" height="10.58" patternUnits="userSpaceOnUse" id="SvgjsPattern1169">
+            <rect width="317.4" height="5.29" x="0" y="0" fill="rgba(88, 135, 216, 1)"></rect>
+            <rect width="317.4" height="5.29" x="0" y="5.29" fill="rgba(0, 0, 0, 0)"></rect>
+        </pattern>
+        <clipPath id="SvgjsClipPath1168">
+            <circle r="79.35" cx="1347.35" cy="121.92"></circle>
+        </clipPath>
+        <pattern x="0" y="0" width="60" height="6" patternUnits="userSpaceOnUse" id="SvgjsPattern1171">
+            <rect width="60" height="3" x="0" y="0" fill="rgba(244, 137, 48, 1)"></rect>
+            <rect width="60" height="3" x="0" y="3" fill="rgba(0, 0, 0, 0)"></rect>
+        </pattern>
+        <clipPath id="SvgjsClipPath1170">
+            <circle r="15" cx="1134.49" cy="359.61"></circle>
+        </clipPath>
+        <pattern x="0" y="0" width="12.2" height="12.2" patternUnits="userSpaceOnUse" id="SvgjsPattern1173">
+            <path d="M6.1 1L6.1 11.2M1 6.1L11.2 6.1" stroke="rgba(106, 214, 137, 1)" fill="none" stroke-width="1.42"></path>
+        </pattern>
+        <clipPath id="SvgjsClipPath1172">
+            <circle r="30.5" cx="136.48" cy="7.3"></circle>
+        </clipPath>
+    </defs>
+</svg>

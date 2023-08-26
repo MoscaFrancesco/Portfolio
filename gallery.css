@@ -1,0 +1,109 @@
+
+body {
+  margin: 0;
+  padding:0 10vw ;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  transform: translateX(-10vw);
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  border: solid;
+  left: 0px;
+  padding: 10px 30px;
+
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+
+}
+
+.button-row {
+  margin-top: 5vw;
+  display: flex;
+}
+
+.button {
+  flex: 1;
+  padding: 10px;
+  background-color: lightblue;
+  border: none;
+  cursor: pointer;
+}
+
+.section {
+  display: none;
+  padding: 20px;
+  background-color: lightgray;
+}
+
+.section.active {
+  display: block;
+}
+
+/* ------------------------------ masonry grid ------------------------------ */
+.masonry {
+column-count: 4;
+column-gap: 20px;
+background-color:transparent;
+}
+
+.item {
+margin-bottom: 20px;
+position: relative;
+border-radius:0px; 
+overflow: hidden;
+border: solid;
+}
+
+.item > a > img {
+width: 100%;
+display: inline-block;
+transition: transform 0.25s ease;
+background-size: cover;
+}
+
+.item > a:hover >  img {
+ transform: scale(1.05);
+}
+
+.sl-wrapper > .sl-navigation > button, .sl-wrapper > .sl-close {
+color: #fff;
+}
+
+.sl-overlay {
+background-color: #000;
+}
+.sl-wrapper > .sl-image > .sl-caption {
+text-align: center;
+}
+
+@media (max-width: 996px) {
+.masonry {
+  column-count: 3;
+}
+}
+
+@media (max-width: 768px) {
+.masonry {
+  column-count: 2;
+}
+}
+
+@media (max-width: 768px) {
+.masonry {
+  column-count: 2;
+}
+}
+
+@media (max-width: 540px) {
+.masonry {
+  column-count: 1;
+}
+}
