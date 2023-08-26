@@ -1050,7 +1050,8 @@ position: relative;
 .IntroWorks {
 background-color:#20232c;
 width:100%;
-height:100vh
+height:100vh;
+overflow: hidden;
 }
 
 .IntroWorks .parallax{
@@ -1667,7 +1668,7 @@ footer .icon i {
 @media (max-width: 768px) {
   footer{
     padding-bottom: 7vw;
-
+    height: 50vh; 
   }
   footer .SocialContact{
     padding: 0;
