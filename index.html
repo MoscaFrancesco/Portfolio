@@ -8,21 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+
+    <!-- ---------------- da eliminare quando rifaccio la foto ----------------- -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.11.1/simple-lightbox.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Includi il CSS di Font Awesome -->
+    <!-- Includi il CSS di Font Awesome  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <!-- Includi il CSS di SimpleLightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.11.1/simplelightbox.min.css">
 
@@ -53,9 +54,11 @@
     <header class="header" id="Header">
 
         <!-- ------------------------------- NavBar -------------------------------- -->
-        <nav class="NavbarHeader" >
-
-
+        <nav class="NavbarHeader">
+            <div class="background-container">
+              <div class="background-image background1"></div>
+              <div class="background-image background2"></div>
+            </div>
             <input type="radio" id="radio-1" name="tabsSelection" checked>
             <label class="tab" for="radio-1">Me</label>
             <input type="radio" id="radio-2" name="tabsSelection">
@@ -73,7 +76,7 @@
                 <p style=" position: absolute; white-space: nowrap; left: 60px; width:80px; top: 4px; bottom:20px; text-align: center;">Follow Me</p>
                 
                 <div class="Socialcard">
-                    <img  class="card-photo lazyload" id="card-photo" data-src="./Resources/Mati-min.jpg"></img>
+                    <img  class="card-photo lazyload" id="card-photo" data-src="./Resources/Mati-min.webp"></img>
                     <div class="card-title">Mati Ruffino <br>
                         <span>Artist &amp; Piccione</span>
                     </div>
@@ -87,6 +90,9 @@
                         <button class="card-socials-btn linkedin">
                             <svg height="512" viewBox="0 0 512 512" width="512" ><path d="m51.326 185.85h90.011v270.872h-90.011zm45.608-130.572c-30.807 0-50.934 20.225-50.934 46.771 0 26 19.538 46.813 49.756 46.813h.574c31.396 0 50.948-20.814 50.948-46.813-.589-26.546-19.551-46.771-50.344-46.771zm265.405 124.209c-47.779 0-69.184 26.28-81.125 44.71v-38.347h-90.038c1.192 25.411 0 270.872 0 270.872h90.038v-151.274c0-8.102.589-16.174 2.958-21.978 6.519-16.174 21.333-32.923 46.182-32.923 32.602 0 45.622 24.851 45.622 61.248v144.926h90.024v-155.323c0-83.199-44.402-121.911-103.661-121.911z"></path></svg>
                         </button>
+                        <button class="card-socials-btn linkedin">
+                          <svg height="512" viewBox="0 0 512 512" width="512" ><path d="m51.326 185.85h90.011v270.872h-90.011zm45.608-130.572c-30.807 0-50.934 20.225-50.934 46.771 0 26 19.538 46.813 49.756 46.813h.574c31.396 0 50.948-20.814 50.948-46.813-.589-26.546-19.551-46.771-50.344-46.771zm265.405 124.209c-47.779 0-69.184 26.28-81.125 44.71v-38.347h-90.038c1.192 25.411 0 270.872 0 270.872h90.038v-151.274c0-8.102.589-16.174 2.958-21.978 6.519-16.174 21.333-32.923 46.182-32.923 32.602 0 45.622 24.851 45.622 61.248v144.926h90.024v-155.323c0-83.199-44.402-121.911-103.661-121.911z"></path></svg>
+                      </button>
                     
                     </div>
                 </div>
@@ -146,19 +152,28 @@
 
             <!-- ---------------------------- Welcome Page ----------------------------- -->
             <div class="WelcomeSlider">
+              <div class="SliderContent">
+                <img src="Resources/FirstScritta.webp">
+              </div>
+              <div class="OverlaySlider">
+                <h1 style="font-size: 6vw; text-shadow: 4px 0 #fff, -4px 0 #fff, 0 4px #fff, 0 -4px #fff,
+                2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff; position: absolute; right: 4vw;">Welcome to my <br>Website</h1>
+              </div>
+
             </div>
+            
 
             <!-- ---------------------------- OtherContent ----------------------------- -->
             <div id="OtherContent">
                 <p class="LabelDivisore">Welcome to my Portfolio</p>
-                <div class="divisore"></div>
+                <div class="divisore" style="margin-bottom: 0;"></div>
 
                 <div class="First">
 
                     <div class="row">
-                      <div class="col-md-6 parallax" id="colMD6-img">
+                      <div class="col-md-6 " id="colMD6-img">
                         <span>
-                            <img class="lazyload"  data-src="Resources/Mati3.jpg" alt="Immagine">
+                            <img class="lazyload" src="Resources/FirstIMG (2).webp" alt="Immagine">
                         </span>
                       </div>
 
@@ -166,9 +181,9 @@
                         <h3>Hi I’m Matilde Ruffino,
                             Artist & Pigeon
                         </h3>
-                        <p>Il mio lavoro è principalmente incentrato sulla modellazione tridimensionale, texture e rendering. Mi piace esplorare le creature con un tocco di surrealismo oscuro per personaggi e produzioni.<br><br>
-                            Attualmente sono uno studente di design multimediale interattivo a Istanbul, attualmente lavoro come freelance e sto cercando opportunità di stage.<br><br>
-                            Il mio lavoro è principalmente incentrato sulla modellazione tridimensionale, texture e rendering. Mi piace esplorare le creature con un tocco di surrealismo oscuro per personaggi e produzioni.
+                        <p>Sono una giovane creativa appassionata di comunicazione e desiderosa di creare esperienze significative per le persone attraverso il mio lavoro. <br><br>
+
+                          La mia determinazione e la mia curiosità mi guidano costantemente alla scoperta di nuove opportunità e sfide.
                         </p>
 
                       </div>
@@ -180,64 +195,114 @@
 
                 <!-- ------------------------------ About Me ------------------------------- -->
                 <div class="AboutMe">
-                    <div class="container mt-4 ">
-                        <div class="row  ">
-                          <div class="col-md-4 mb-3">
-                            <div class="card parallax">
-                              <span>
-                                <img  data-src="Resources/Mati1-min.jpg"  style="transform: scale(1.8); position: relative; margin-top: 20%;" class="card-img-top lazyload" alt="Image 1">
-                              </span>
-                              <div class="card-body">
-                                <h3 class="card-title">Lavoro</h3>
-                                <p class="card-text">Durante il mio percorso di studi, ho avuto la fortuna di svolgere diverse esperienze lavorative che mi hanno permesso di mettere in pratica le competenze acquisite. Ho lavorato come stagista presso diverse aziende, dove ho avuto l'opportunità di contribuire attivamente a progetti significativi.</p>
-                              </div>
-                            </div>
+                    <div class="FirstWrapper">
+                      <img src="Resources/PrimaTipaMobile.webp">
+                    <div class="text">
+                    <h1>Esperienze Creative</h1>
+                    <img src="Resources/Stelline.webp" style="height: 6vw; width:auto;  position: absolute; left:33vw; margin-top:-8vw"  >
 
-                          </div>
+                    <p>
+                      Ho dimostrato la mia passione e abilità nella creatività e nella comunicazione attraverso una serie di progetti significativi: <br><br>
 
-                          <div class="col-md-4 mb-3 ">
-                            <div class="card parallax">
-                              <span>
-                                <img  data-src="Resources/Mati4.jpg"   style="transform: scale(1.1);" class="card-img-top lazyload" alt="Image 2">
-                              </span>
-                              <div class="card-body">
-                                <h3 class="card-title">Studio</h3>
-                                <p class="card-text">Nel mio tempo libero, mi dedico a diverse attività che mi consentono di rilassarmi e sviluppare ulteriormente le mie passioni. Una delle mie attività preferite è la fotografia, che mi permette di catturare momenti unici e di esprimere la mia creatività.
-                                  Lo studio rappresenta una parte fondamentale della mia vita.
-                                  </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <div class="card parallax">
-                              <span>
-                                <img  data-src="Resources/Mati2-min.jpg" style="transform: scale(1.1);" class="card-img-top lazyload" alt="Image 3">
-                              </span>
-                              <div class="card-body">
-                                <h3 class="card-title">Tempo Libero</h3>
-                                <p class="card-text">Lo studio rappresenta una parte fondamentale della mia vita e mi dedico con impegno e passione a conseguire risultati eccellenti. 
-                                  Durante il mio percorso accademico, ho sempre cercato di mantenere un equilibrio tra lo studio e le altre attività, in modo da garantire il massimo rendimento. </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      •	Concorso "COVID con i Miei Occhi": Ho ottenuto il primo posto in questo concorso con l'animazione "Quarantin", che ha espresso in modo unico l'impatto della pandemia attraverso la lente della mia creatività.<br><br>
+                    
+                      •	Corso di Comunicazione Grafica: Ho partecipato con impegno a un corso focalizzato sulla creazione di loghi per diversi brand, organizzato dalla mia scuola. Questa esperienza mi ha permesso di affinare le mie capacità di design e di applicarle in contesti concreti.<br><br>
+                    
+                      •	Icona per Chatbot: Ho avuto l'opportunità di creare diversi personaggi creativi che fungono da icona per alcuni chatbot dedicati al risparmio intelligente e all'informazione ambientale. Questa sfida mi ha permesso di unire la mia creatività alla mia capacità di comunicare messaggi complessi in modo accessibile.<br><br>
+                    
+                      •	Progetti NFT: Ho partecipato attivamente a vari progetti di creazione di NFT, dimostrando la mia comprensione del mondo digitale e la mia capacità di tradurre concetti artistici in opere virtuali di valore.
+                    </p>
+                    </div>
+                    <img src="Resources/PrimaTipa.webp">  
+
+                  </div>
+                  <div class="StarWrapper">
+                    <img src="Resources/Star.webp" >
+                  </div>
+
+                  <div class="SecondWrapper">
+                    <img src="Resources/SecondaTipa.webp">
+                    <div class="text">
+                      <p>Nonostante una formazione scolastica di tipo scientifico, ho coltivato le mie passioni e interessi in modo autodidatta. 
+                        Ho sempre visto ogni sfida come un'opportunità di apprendimento, e questa mentalità mi ha permesso di sviluppare una prospettiva unica e multidisciplinare.</p>
+                      <img src="Resources/SecondaTipaMobile.webp">
+
+                      <h1>Oltre la Creatività</h1>
+                      <p>	•	Musica: Oltre alla creatività visiva, mi esprimo anche attraverso la musica. Ho iniziato a suonare il violino nel 2015 e l'ukulele nel 2020, dimostrando la mia dedizione nell'apprendere nuovi strumenti e sperimentare con diverse forme di espressione artistica. <br><br>
+
+                        •	Viaggi e Scoperte: Sono un'appassionata viaggiatrice e amante della scoperta. Ogni viaggio è un'opportunità per arricchire la mia prospettiva e raccogliere ispirazione da diverse culture e contesti.<br><br>
+                      
+                        •	Stile di Vita Attivo: Credo nell'importanza di un equilibrio tra il corpo e la mente. Amo praticare lo sport e mantenermi attiva, poiché credo che uno stile di vita sano contribuisca alla mia creatività e alla mia produttività.<br><br>
+                      </p>
                       </div>
+                  </div>
+
+                  <div class="LastImgWrapper">
+                    <img src="Resources/5tipe.webp" >
+                    <div class="OuterMagneticRange">
+                     
+                      <div class="newbutton magnetic" data-strength="100" data-strength-text="50">
+                      <div class="MagneticChild"></div>
+                      </div>
+                      <img src="Resources/Resto.webp">
+                    </div>
+
+
+                    <!-- -- <img src="Resources/FotoGiuP.webp"  style="margin-right: -8vw;"> --- -->
+                  </div>
                 </div>
                 
-                <p class="LabelDivisore"  >My concept of Art</p>
-                <div class="divisore"></div>
+                <p class="LabelDivisore" >My concept of Art</p>
+                <div class="divisore" style="margin-bottom: 0;"></div>
 
                 <!-- --------------------------- Frasea Celebre ---------------------------- -->
                 <div class="FraseCelebre">
-                  <h1>Se l'umanità non esiste, allora non esiste neanche l'arte</h1>
-                  <p>Frida Kahlo</p>
+                  <div class="about_text_wrap">
+                    <div class="about_text">
+                      <div class="about_text_pWrap">
+                      <h1>“Per vedere dobbiamo dimenticare il
+                        nome delle cose che stiamo
+                        guardando”</h1>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Claude Monet</p>
                 </div>
 
 
-                <p class="LabelDivisore" style="text-align:right; margin-top: 6vh;">I'm good at</p>
-                <div class="divisore"></div>
- 
-            </div>
+                <div class="GotoMyArtWrapper">
+                  <div class="parallax">
+                    <span>
+                        <img src="Resources/In_The_Middle_Of_The_City.webp" alt="Immagine">
+                    </span>
+                  </div>
+
+                  <div class="text">
+                    <h1>Immerse Yourself in the World of Art: <br>Check out my portfolio showcase </h1>
+                    <button id="section2Button" > <span class="GotoText">Portfolio</span>
+
+                      <div class="star-1">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-2">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-3">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-4">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-5">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                      <div class="star-6">
+                        <svg viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                      </div>
+                    </button>                  
+                  </div>
+                </div>
+          </div>
 
         </section>
                 
@@ -245,15 +310,17 @@
             <div class="IntroWorks">
               <div class="parallax">
                 <span>
-                    <img src="Resources/BackgroundPalace-min.jpg" alt="Immagine">
+                    <img src="Resources/BackgroundPalace-min.webp" alt="Immagine">
                 </span>
               </div>
+
+
               <div class="Text">
                 <p style="text-align: left;">Take a look to my works</p>
                 <h1>My Experiments & Personal Work</h1>
-                <p style="text-align:right; box-sizing: border-box; padding-right: 3.5vw;">2019-2023</p>
+                <p style="text-align:right;">2019-2023</p>
               </div>
-              <img src="Resources/ViolinGirl.png">
+              <img src="Resources/ViolinGirl.webp">
             </div>
             
             <section class="OtherContentWork">
@@ -276,44 +343,44 @@
               <div class="ComicsGrid">
                 <div class="FirstPage comicsPages">
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.1-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.1-min.jpg" alt="Didascalia">
+                    <a href="Resources/Disegni/Fumetto/Pt.1-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.1-min.webp" alt="Didascalia">
                     </a>
                   </div>
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.2-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.2-min.jpg">
+                    <a href="Resources/Disegni/Fumetto/Pt.2-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.2-min.webp">
                     </a>
                   </div>                
                 </div>
                 <div class="SecondPage comicsPages">
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.3-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.3-min.jpg">
+                    <a href="Resources/Disegni/Fumetto/Pt.3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.3-min.webp">
                     </a>
                   </div>                  
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.4-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.4-min.jpg">
+                    <a href="Resources/Disegni/Fumetto/Pt.4-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.4-min.webp">
                     </a>
                   </div>
                 </div>
                 <div class="ThirdPage comicsPages">
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.5-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.5-min.jpg">
+                    <a href="Resources/Disegni/Fumetto/Pt.5-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.5-min.webp">
                     </a>
                   </div>
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.6-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.6-min.jpg">
+                    <a href="Resources/Disegni/Fumetto/Pt.6-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.6-min.webp">
                     </a>
                   </div>
                 </div>
                 <div class="ForthPage comicsPages">
                   <div class="zoomItem">
-                    <a href="Resources/Disegni/Fumetto/Pt.7-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.7-min.jpg">
+                    <a href="Resources/Disegni/Fumetto/Pt.7-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Fumetto/Pt.7-min.webp">
                     </a>
                   </div>
                 </div>
@@ -329,64 +396,64 @@
               <div class="IllustrationGrid">
                 <div class="First-ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/1-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/1-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/1-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/1-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="Second-Ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/2-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/2-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/2-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/2-min.webp">
                     </a>
                   </div>  
                 </div>
                 <div class="Third-Ill" >
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/3-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/3-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/3-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="Forth-Ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/4-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/4-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/4-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/4-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="Fifth-Ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/5-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/5-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/5-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/5-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="Sisxth-Ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/6-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/6-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/6-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/6-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="Seventh-Ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/7-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/7-min.jpg">
+                    <a href="Resources/Disegni/Illustrazioni/7-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/7-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="Eighth-ill">
                   <div class="zoomItemIll">
-                    <a href="Resources/Disegni/Illustrazioni/8-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/8-min.jpg">
+                      <a href="Resources/Disegni/Illustrazioni/8-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Illustrazioni/8-min.webp">
                     </a>
                   </div> 
                 </div>
               </div>
 
               <div class="Wraper">
-                <p class="OtherTextWrapper"><a class="link" href="">Check out more Illustrations</a></p>          
+                <p class="OtherTextWrapper"><a class="link"  href="Gallery.html?source=Illustration">Check out more Illustrations</a></p>          
               </div>
 
 
@@ -396,50 +463,50 @@
               <div class="CartoonGrid">
                 <div class="FirstCartoon">
                   <div class="zoomItemCartoon">
-                    <a href="Resources/Disegni/Cartoons/1-min-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/1-min-min.jpg">
+                    <a href="Resources/Disegni/Cartoons/1-min-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/1-min-min.webp">
                     </a>
                   </div> 
                 </div>
                 <div class="SecondCartoon">
                   <div class="zoomItemCartoon">
-                    <a href="Resources/Disegni/Cartoons/2-min-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/2-min-min.jpg">
+                    <a href="Resources/Disegni/Cartoons/2-min-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/2-min-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="ThirdCartoon">
                   <div class="zoomItemCartoon">
-                    <a href="Resources/Disegni/Cartoons/3-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/3-min.jpg">
+                    <a href="Resources/Disegni/Cartoons/3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/3-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="ForthCartoon">
                   <div class="zoomItemCartoon">
-                    <a href="Resources/Disegni/Cartoons/Pt.1-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/Pt.1-min.jpg">
+                    <a href="Resources/Disegni/Cartoons/Pt.1-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/Pt.1-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="FifthCartoon">
                   <div class="zoomItemCartoon">
-                    <a href="Resources/Disegni/Cartoons/Pt2-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/Pt2-min.jpg">
+                    <a href="Resources/Disegni/Cartoons/Pt2-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/Pt2-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="SixthCartoon">
                   <div class="zoomItemCartoon">
-                    <a href="Resources/Disegni/Cartoons/Pt3-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/Pt3-min.jpg">
+                    <a href="Resources/Disegni/Cartoons/Pt3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Cartoons/Pt3-min.webp">
                     </a>
                   </div>                 
                 </div>
               </div>
 
               <div class="Wraper">
-                <p class="OtherTextWrapper"><a class="link" href="">Check out more Cartoons</a></p>          
+                <p class="OtherTextWrapper"><a class="link" href="Gallery.html?source=Cartoon">Check out more Cartoons</a></p>          
               </div>
 
               <p class="LabelDivisore">Sketch</p>
@@ -448,50 +515,50 @@
               <div class="SketchGrid">
                 <div class="FirstSketch">
                   <div class="zoomItemSketch">
-                    <a href="Resources/Disegni/Sketch/1-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/1-min.jpg">
+                    <a href="Resources/Disegni/Sketch/1-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/1-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="SecondSketch">
                   <div class="zoomItemSketch">
-                    <a href="Resources/Disegni/Sketch/2-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/2-min.jpg">
+                    <a href="Resources/Disegni/Sketch/2-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/2-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="ThirdSketch">
                   <div class="zoomItemSketch">
-                    <a href="Resources/Disegni/Sketch/3-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/3-min.jpg">
+                    <a href="Resources/Disegni/Sketch/3-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/3-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="ForthSketch">
                   <div class="zoomItemSketch">
-                    <a href="Resources/Disegni/Sketch/4-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/4-min.jpg">
+                    <a href="Resources/Disegni/Sketch/4-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/4-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="FifthSketch">
                   <div class="zoomItemSketch">
-                    <a href="Resources/Disegni/Sketch/5-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/5-min.jpg">
+                    <a href="Resources/Disegni/Sketch/5-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/5-min.webp">
                     </a>
                   </div>                 
                 </div>
                 <div class="SixthSketch">
                   <div class="zoomItemSketch">
-                    <a href="Resources/Disegni/Sketch/6-min.jpg">                  
-                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/6-min.jpg">
+                    <a href="Resources/Disegni/Sketch/6-min.webp">                  
+                      <img class="lazyload"  data-src="Resources/Disegni/Sketch/6-min.webp">
                     </a>
                   </div>                 
                 </div>
               </div>
 
               <div class="Wraper" style="margin-bottom:6vw;">
-                <p class="OtherTextWrapper"><a class="link" href="">Check out more Sketch</a></p>          
+                <p class="OtherTextWrapper"><a class="link" href="Gallery.html?source=Sketch">Check out more Sketch</a></p>          
               </div>
 
             </section>
@@ -502,20 +569,33 @@
 
     <!-- ------------------------------- footer -------------------------------- -->
     <!-- ------------------------------- footer -------------------------------- -->
-    <footer >
+    <footer class="footer">
       <div class="SocialContact">
 
         <div class="wrapper">
           <h1>Reach Me on my Social Channels</h1>
           <div class="divider"></div>
-          <div class="CircleContainer">
-            <div class="SocialCircle"></div>
-            <div class="SocialCircle"></div>
-            <div class="SocialCircle"></div>
-            <div class="SocialCircle"></div>
-          </div>
+            <ul class="SocialButtons">
+              <li class="icon facebook">
+                  <span class="tooltip">Instagram</span>
+                  <span><i class="fab fa-instagram"></i></span>
+              </li>
+              <li class="icon twitter">
+                  <span class="tooltip">Behance</span>
+                  <span><i class="fab fa-behance"></i></span>
+              </li>
+              <li class="icon instagram">
+                  <span class="tooltip">Instagram</span>
+                  <span><i class="fab fa-instagram"></i></span>
+              </li>
+                <li class="icon tiktok">
+                  <span class="tooltip">tiktok</span>
+                  <span><i class="fab fa-tiktok"></i></span>
+              </li>
+          </ul>
         </div>
       </div>
+      
       <div class="BottomBar">
         <p>Code by Mosca</p>
         <p>©2023</p>
