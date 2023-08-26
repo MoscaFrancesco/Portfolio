@@ -235,8 +235,8 @@ function initWelcomeSlider(){
 function initSmoothScroll(){
   const lenis = new Lenis({
     duration:0.8,
-    smoothWheel:true,
-    smoothTouch:true,
+    smoothWheel:false,
+    smoothTouch:false,
   });
 
 lenis.on('scroll', (e) => {
