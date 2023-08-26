@@ -43,9 +43,10 @@ function initLoader(){
 
 /* --------------------------------- Header --------------------------------- */
 
+let showAnim;
 // This makes the header reappear when you scroll upwards.
 function initHeader(){
-const showAnim = gsap.from('header', { 
+ showAnim = gsap.from('header', { 
     yPercent: -100,
     paused: true,
     duration: 0.2
@@ -92,50 +93,104 @@ function initSocialButton(){
 //Change section ---IN PROGRESS---
 function initChangeSection(){
 
-    const fadeOutDuration = 100;
-    const overlayDelay = 300;
-    const overlay = $('#overlay');
-  
-    function fadeIn(element) {
-      element.css({ display: 'flex', opacity: 1 });
+//questa serve per far cambiare lo sfondo della Navbar
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const background1 = document.querySelector(".background1");
+const background2 = document.querySelector(".background2");
+const tab = document.querySelector(".tab")
+
+radioButtons.forEach(function (radio) {
+  radio.addEventListener("change", function () {
+    if (this.id === "radio-2" && this.checked) {
+      background1.style.opacity = 0;
+      background2.style.opacity = 1;
+      tab.style.color = "white"
+    } else {
+      background1.style.opacity = 1;
+      background2.style.opacity = 0;
+      tab.style.color = "black"
     }
+  });
+});
   
-    function fadeOut(element) {
-      element.css({ opacity: 0 });
-      setTimeout(function() {
-        element.hide();
-      }, fadeOutDuration);
+//questa invece per far cambiare sezione
+const fadeOutDuration = 100;
+const overlayDelay = 300;
+const overlay = $('#overlay');
+let isTransitioning = false; // Aggiunto per gestire lo stato di transizione
+
+//le due transizioni in fade
+function fadeIn(element) {
+  element.css({ display: 'flex', opacity: 1 });
+  $('footer').css({ opacity: 1 });
+}
+
+function fadeOut(element) {
+  element.css({ opacity: 0 });
+  $('footer').css({ opacity: 0 });
+  setTimeout(function () {
+    element.hide();
+  }, fadeOutDuration);
+}
+
+//gestisce quando chiamare le due transizioni
+function fadeOutInTransition(selectedContentId) {
+  if (isTransitioning) {
+    return; // Esce se c'è già una transizione in corso
+  }
+  isTransitioning = true; // Imposta lo stato di transizione su true
+
+  const activeContent = $('.content.active');
+  if (activeContent.length) {
+    fadeOut(activeContent);
+    activeContent.removeClass('active');
+  }
+
+  overlay.css("z-index", 1);
+  overlay.css({ opacity: 1, pointerEvents: 'auto' });
+
+  setTimeout(function () {
+    overlay.css({ opacity: 0, pointerEvents: 'none' });
+
+    const selectedContent = $('#' + selectedContentId);
+    fadeIn(selectedContent);
+    selectedContent.addClass('active');
+
+    if ($('.active') && $('.active').attr('id') === 'content-1') {
+      $('footer').css({ transform: 'translateY(250vh)' });
+    } else {
+      $('footer').css({ transform: 'translateY(0)' });
     }
-  
-    function fadeOutInTransition(selectedContentId) {
-      const activeContent = $('.content.active');
-      if (activeContent.length) {
-        fadeOut(activeContent);
-        activeContent.removeClass('active');
-      }
-  
-      overlay.css({ opacity: 1, pointerEvents: 'auto' });
-  
-      setTimeout(function() {
-        overlay.css({ opacity: 0, pointerEvents: 'none' });
-  
-        const selectedContent = $('#' + selectedContentId);
-        fadeIn(selectedContent);
-        selectedContent.addClass('active');
-      }, overlayDelay);
-    }
-  
-    $('input[name="tabsSelection"]').on('change', function() {
-      history.scrollRestoration = 'manual'; 
-      window.scrollTo(0, 0);
-      $('#OtherContent').scrollTop(0);
-  
-      $('#OtherContent').css('pointerEvents', 'none');
-      $('.ScrollDots').css('position', 'absolute');
-  
-      const selectedContentId = this.id.replace('radio', 'content');
-      fadeOutInTransition(selectedContentId);
-    });
+
+    isTransitioning = false; // Resetta lo stato di transizione
+    setTimeout(function () {
+      overlay.css("z-index", -1);
+    }, overlayDelay)
+  }, overlayDelay);
+}
+
+//evento on change
+$('input[name="tabsSelection"]').on('change', function () {
+  history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  $('.ScrollDots').css('position', 'absolute');
+  const selectedContentId = this.id.replace('radio', 'content');
+  fadeOutInTransition(selectedContentId);
+});
+
+//cambio sezione manuale
+const section2Button = document.getElementById('section2Button');
+section2Button.addEventListener('click', function() {
+    showAnim.play()
+    setTimeout(() => { //prima mostra la navbar e poi cambia
+      document.getElementById("radio-2").checked = true;
+      fadeOutInTransition('content-2'); // Cambia con l'ID della tua prima sezione
+      background1.style.opacity = 0;
+        background2.style.opacity = 1;
+        tab.style.color = "white"
+    }, 300);
+});
+
 }
 
 //Menu Button (right)
@@ -161,21 +216,36 @@ function initMenuButton() {
   $("#MenuButton").on("click", Menu);
 }
 
+function initWelcomeSlider(){
+  gsap.to(".OverlaySlider", {
+    x: "0%",
+    ease: "Linear.out", 
+    scrollTrigger: {
+      trigger: ".WelcomeSlider",
+      start: "center center", 
+      end: "300% center", 
+      scrub: true, 
+      pin: true, 
+    }
+  });
+}
+
 /* ------------------------------ First Section ----------------------------- */
 
 function initSmoothScroll(){
   const lenis = new Lenis({
-    smoothTouch: true,
-    smoothWheel: true,
-    syncTouch: true
+    duration:0.8,
+    smoothWheel:true,
+    smoothTouch:true,
   });
+
 lenis.on('scroll', (e) => {
   console.log(e)
 })
 
 function raf(time) {
   lenis.raf(time)
-  requestAnimationFrame(raf)
+  requestAnimationFrame(raf);
 }
 
 requestAnimationFrame(raf)
@@ -204,7 +274,7 @@ function initParallax(){
       if ($(this).is_on_screen()) {	
         var firstTop = $(this).offset().top; 
         var $span = $(this).find("img");
-        var moveTop = (firstTop - winScrollTop) * 0.05; // speed
+        var moveTop = (firstTop - winScrollTop) * 0.10; // speed
         var currentScale = parseFloat($span.css("transform").split(',')[3]); // Ottieni l'attuale valore di scale
   
         $span.css({
@@ -219,6 +289,115 @@ function initParallax(){
     winScrollTop = $(this).scrollTop();
     parallax();
   });
+
+}
+
+function InitfooterAnimation(){
+
+}
+
+function InitImageAnimation(){
+  const image = document.querySelector('.FirstWrapper img:nth-child(3)');
+
+    gsap.fromTo(image,{
+      x: '4%',
+    },  {
+      x: '0%',
+
+      ease: "ease.inOut",
+      scrollTrigger: {
+        trigger: image,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+      }
+    });
+
+    const image2 = document.querySelector('.SecondWrapper img:nth-child(1)');
+
+    gsap.fromTo(image2,{
+      x: '-4%',
+    },  {
+      x: '0%',
+      ease: "ease.inOut",
+      scrollTrigger: {
+        trigger: image2,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true
+        }
+    });
+}
+
+function InitCitAnimation(){
+
+  gsap.registerPlugin(ScrollTrigger);
+gsap.set(".about_text_p", { autoAlpha: 0, yPercent: 200 });
+
+  function DividiInLinee() {
+    // Ottieni il contenuto del paragrafo non diviso in righe
+    const unformattedParagraph = document.querySelector(".about_text_pWrap")
+      .textContent;
+
+    // Dividi il contenuto in righe utilizzando il carattere di nuova riga "\n" come delimitatore
+    const lines = unformattedParagraph
+      .split("\n")
+      .filter((line) => line.trim() !== "");
+
+    // Seleziona l'elemento HTML in cui vuoi sostituire il paragrafo esistente
+    const aboutTextDiv = document.querySelector(".about_text");
+
+    // Rimuovi tutti gli elementi figli dell'elemento aboutTextDiv
+    while (aboutTextDiv.firstChild) {
+      aboutTextDiv.removeChild(aboutTextDiv.firstChild);
+    }
+
+    // Crea un nuovo elemento div per ogni riga e aggiungilo alla struttura HTML
+    lines.forEach((line) => {
+      const lineDivWrap = document.createElement("div");
+      lineDivWrap.className = "about_text_pWrap";
+
+      const lineContent = document.createElement("div");
+      lineContent.className = "about_text_p";
+      lineContent.textContent = line;
+
+      lineDivWrap.appendChild(lineContent);
+      aboutTextDiv.appendChild(lineDivWrap);
+    });
+  }
+  DividiInLinee();
+
+  setTimeout(() => {
+    //prima mostra la navbar e poi cambia
+
+    ScrollTrigger.batch(".about_text", {
+      onEnter: (batch) => {
+        batch.forEach((section, i) => {
+          gsap.to(section.querySelectorAll(".about_text_p"), {
+            autoAlpha: 1,
+            transform: "translateY(0%)",
+            duration: 0.6,
+            ease: "power1.inOut",
+            stagger: 0.1,
+            delay: 0,
+          });
+        });
+      },
+      onLeaveBack: (batch) => {
+        batch.forEach((section) => {
+          gsap.to(section.querySelectorAll(".about_text_p"), {
+            autoAlpha: 0,
+            transform: "translateY(200%)",
+            duration: 0.3,
+            ease: "power1.inOut"
+          });
+        });
+      },
+      start: "top 95%",
+      end: "bottom 55%",
+      //markers: true
+    });
+  }, 1000);
 }
 
 /* ---------------------------------- Works --------------------------------- */
@@ -232,6 +411,7 @@ function initsimpleLightbox(){
     'captions': true, // Abilita le didascalie
     'captionSelector': 'img' ,
     'captionsData': 'alt',
+    'fileExt':'webp',
     'animationSpeed':100,
     'loop':true,
   });
@@ -245,6 +425,7 @@ function initsimpleLightbox(){
     'captionsData': 'alt',
     'animationSpeed':100,
     'disableScroll': true,
+    'fileExt':'webp',
     'loop':true,
   });
 
@@ -255,6 +436,7 @@ function initsimpleLightbox(){
     'captions': true, // Abilita le didascalie
     'captionSelector': 'img' ,
     'captionsData': 'alt',
+    'fileExt':'webp',
     'animationSpeed':100,
     'disableScroll': true,
     'loop':true,
@@ -268,11 +450,11 @@ function initsimpleLightbox(){
     'captionSelector': 'img' ,
     'captionsData': 'alt',
     'animationSpeed':100,
+    'fileExt': 'webp',
     'disableScroll': true,
     'loop':true,
   });
   
-
 }
 
 function initMagneticButtons() {
@@ -335,35 +517,39 @@ function initLinks(){
     // Chiama la funzione per assegnare i ritardi ai tuoi elementi
     setTransitionDelays(".OtherTextWrapper .link div span:nth-child(n)", 0.01); // Puoi cambiare qui per modificare il ritardo tra le lettere
 });
-
-  
-  
 }
 
 
-// Fire all scripts on page load
-// Fire all scripts on page load
+    
+/* ---------------------- Fire all scripts on page load --------------------- */
 $(document).ready(function() {
   //loader
-  initLoader()
+  //initLoader() devo rimettere top a 0 nel css e va tolto anche il commento da beforeunload, oltre che rimettere il timer a 2300
+
+  initWelcomeSlider()
+
 
   //header
   initHeader()
   initSocialButton()
   initChangeSection()
   initMenuButton()
+  InitfooterAnimation()
+  InitImageAnimation()
+  InitCitAnimation()
 
   setTimeout(function() { //run after the loader 
-      $("body").css("overflow", "visible");
+      $("body").css("overflow-y", "visible");
+
+      if(window.innerWidth > 540){
+      //
+      
       initSmoothScroll()
-      //initParallax() 
+      initParallax() 
       initMagneticButtons()
       initLinks()
-      
-    }, 2300);
-  
-  //Section 1
-
+      }
+    }, 0); //va a 2300
 
   //Works
   initsimpleLightbox()
@@ -371,3 +557,5 @@ $(document).ready(function() {
 
 //beforeUnload
 $(window).on('beforeunload', () => window.scrollTo(0, 0));
+$(window).on('unload', () => document.getElementById("radio-1").checked = true);
+
