@@ -537,17 +537,18 @@ $(document).ready(function() {
   InitfooterAnimation()
   InitImageAnimation()
   InitCitAnimation()
+        
+      initSmoothScroll()
+      initParallax() 
+      initMagneticButtons()
+      initLinks()
 
   setTimeout(function() { //run after the loader 
       $("body").css("overflow-y", "visible");
 
       if(window.innerWidth > 540){
       //
-      
-      initSmoothScroll()
-      initParallax() 
-      initMagneticButtons()
-      initLinks()
+
       }
     }, 0); //va a 2300
 
