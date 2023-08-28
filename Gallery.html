@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -19,35 +23,77 @@
 </head>
 <body>
   <div class="header">
-    <a href="index.html">
-        <div class="circle" ></div>
+      <body>
+        <div class="OuterMagneticRange">
+          <a href="index.html">
+            <div class="circle magnetic" data-strength="100" data-strength-text="50">
+              <div class="textblock MagneticChild"><i class="fa fa-arrow-left"></i></div>
+            </div>
+          </a>
+        </div>
+        
 
-    </a>
+        <div class="GalleryHeader"><div class="inner">Gallery</div></div>
+      </body>
+
+      <div class="OuterMagneticRange">
+        <a href="index.html">
+          <div class="circle magnetic" data-strength="100" data-strength-text="50">
+            <div class="textblock MagneticChild"><i class="fa fa-arrow-left"></i></div>
+          </div>
+        </a>
+      </div>
+
   </div>
   
   <div class="button-row">
-    <button class="button" onclick="changeSection(1)">Sezione 1</button>
-    <button class="button" onclick="changeSection(2)">Sezione 2</button>
-    <button class="button" onclick="changeSection(3)">Sezione 3</button>
-    <button class="button" onclick="changeSection(4)">Sezione 4</button>
-    <button class="button" onclick="changeSection(5)">Sezione 5</button>
+
+    <div class="OuterMagneticRange" onclick="changeSection(1)">
+      <div class="newbutton magnetic" data-strength="20" data-strength-text="15">
+        <div class="hovercolor"></div>
+        <div class="MagneticChild">Digital Art</div>
+
+      </div>
+    </div>
+
+    <div class="OuterMagneticRange" onclick="changeSection(2)">
+      <div class="newbutton magnetic" data-strength="20" data-strength-text="15">
+        <div class="hovercolor"></div>
+        <div class="MagneticChild">Disegno Libero</div>
+      </div>
+    </div>
+
+    <div class="OuterMagneticRange" onclick="changeSection(3)">
+      <div class="newbutton magnetic" data-strength="20" data-strength-text="15">
+        <div class="hovercolor"></div>
+        <div class="MagneticChild">Comics</div>
+      </div>
+    </div>
+
+    <div class="OuterMagneticRange" onclick="changeSection(4)">
+      <div class="newbutton magnetic" data-strength="20" data-strength-text="15">
+        <div class="hovercolor"></div>
+        <div class="MagneticChild">Sketch</div>
+      </div>
+    </div>
+
   </div>
+
+  <div class="divisore"></div>
   
   <div class="section active" id="section1">
-    <div class="masonry"></div>
+    <div class="masonry" id="masonry-1"></div>
   </div>
   <div class="section" id="section2">
-    <div class="masonry"></div>
+    <div class="masonry" id="masonry-2"></div>
   </div>
   <div class="section" id="section3">
-    <div class="masonry"></div>
+    <div class="masonry" id="masonry-3"></div>
   </div>
   <div class="section" id="section4">
-    <div class="masonry"></div>
+    <div class="masonry" id="masonry-4"></div>
   </div>
-  <div class="section" id="section5">
-    <div class="masonry"></div>
-  </div>
+
 
 </body>
 </html>
