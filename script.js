@@ -248,7 +248,7 @@ function initWelcomeSlider(){
 
 function initSmoothScroll(){
   const lenis = new Lenis({
-    duration:0.8,
+    duration:1,
     smoothWheel:true,
     smoothTouch:true,
   });
@@ -576,6 +576,32 @@ function InitDivisorAnim() {
   });
 }
 
+function InitParagraphAnim(){
+    gsap.utils.toArray(".animateP").forEach(elem => {
+      gsap.set(elem, { autoAlpha: 0 });
+      
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 95%",
+        end: "bottom 20%",
+        animation: gsap.fromTo(
+          elem,
+          { y: 100, autoAlpha: 0 },
+          {
+            duration: 1,
+            delay: .3,
+            y: 0,
+            autoAlpha: 1,
+            ease: "expo",
+            overwrite: "auto"
+          }
+        ),
+        toggleActions: "play none none reverse",
+        scrub: 0.5,
+      });
+    });
+    
+}
 /* ---------------------- Fire all scripts on page load --------------------- */
 $(document).ready(function() {
   //loader
@@ -591,16 +617,14 @@ $(document).ready(function() {
   initParallax() 
   initsimpleLightbox()
   InitDivisorAnim()
-
-
-
+  InitParagraphAnim()
 
   setTimeout(function() { //run after the loader 
       $("body").css("overflow-y", "visible");
 
       if(window.innerWidth > 768){
       InitCitAnimation()
-      //initSmoothScroll()
+      initSmoothScroll()
       initMagneticButtons()
       initLinks()
       }
