@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
 
     <!-- ---------------- da eliminare quando rifaccio la foto ----------------- -->
@@ -152,9 +152,7 @@
 
             <!-- ---------------------------- Welcome Page ----------------------------- -->
             <div class="WelcomeSlider">
-              <div class="SliderContent">
-                <img src="Resources/FirstScritta.webp">
-              </div>
+              <div class="SliderContent"></div>
               <div class="OverlaySlider">
                 <h1 style="font-size: 6vw; text-shadow: 4px 0 #fff, -4px 0 #fff, 0 4px #fff, 0 -4px #fff,
                 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff; position: absolute; right: 4vw;">Welcome to my <br>Website</h1>
@@ -191,7 +189,7 @@
                 </div>
 
                 <p class="LabelDivisore" style="text-align:right; ">About Me</p>
-                <div class="divisore"></div>
+                <div class="divisore" style="position: relative; margin-left: auto;"></div>
 
                 <!-- ------------------------------ About Me ------------------------------- -->
                 <div class="AboutMe">
@@ -246,8 +244,6 @@
                       </div>
                       <img src="Resources/Resto.webp">
                     </div>
-
-
                     <!-- -- <img src="Resources/FotoGiuP.webp"  style="margin-right: -8vw;"> --- -->
                   </div>
                 </div>
@@ -570,6 +566,13 @@
     <!-- ------------------------------- footer -------------------------------- -->
     <!-- ------------------------------- footer -------------------------------- -->
     <footer class="footer">
+
+      <div class="OuterMagneticRange">
+        <div class="newbutton magnetic" data-strength="50" data-strength-text="25">
+          <div class="MagneticChild"></div>
+        </div>
+      </div>
+
       <div class="SocialContact">
 
         <div class="wrapper">
@@ -597,8 +600,18 @@
       </div>
       
       <div class="BottomBar">
-        <p>Code by Mosca</p>
-        <p>©2023</p>
+
+        <div class="OuterMagneticRangeLink OuterMagneticRange" >
+          <div class="newbuttonLink magnetic" style="left:0;" data-strength="20" data-strength-text="40">
+            <div class="MagneticChild">Code by Mosca</div>
+          </div>
+        </div>
+        <div class="OuterMagneticRangeLink OuterMagneticRange">
+          <div class="newbuttonLink magnetic" data-strength="20" data-strength-text="40">
+            <div class="MagneticChild">©2023</div>
+          </div>
+        </div>
+
       </div>
     </footer>
     <!-- ------------------------------- footer -------------------------------- -->
