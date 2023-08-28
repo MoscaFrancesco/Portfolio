@@ -160,16 +160,11 @@ function fadeOutInTransition(selectedContentId) {
     fadeIn(selectedContent);
     selectedContent.addClass('active');
 
-    //per piazzare il footer
-    if ($('.active') && $('.active').attr('id') === 'content-1') {
-      $('footer').css({ transform: 'translateY(250vh)' });
-    } else {
-      $('footer').css({ transform: 'translateY(0)' });
       if (!animationExecuted) {
         InitDivisorAnim(); // Chiamata a InitDivisorAnim() solo se non è già stata eseguita
         animationExecuted = true; // Imposta lo stato dell'animazione su "eseguita"
       }
-    }
+    
 
     isTransitioning = false; // Resetta lo stato di transizione
     setTimeout(function () {
@@ -184,11 +179,10 @@ $('input[name="tabsSelection"]').on('change', function () {
   const selectedContentId = this.id.replace('radio', 'content');
   fadeOutInTransition(selectedContentId);
 
-
   setTimeout(function () {
     history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
-  }, overlayDelay)
+  }, 50)
 
 });
 
@@ -306,7 +300,57 @@ function initParallax(){
 
 }
 
+function InitParagraphAnim(){
+  gsap.utils.toArray(".animateP").forEach(elem => {
+    gsap.set(elem, { autoAlpha: 0 });
+    
+    ScrollTrigger.create({
+      trigger: elem,
+      start: "top 95%",
+      end: "bottom 20%",
+      animation: gsap.fromTo(
+        elem,
+        { y: 100, autoAlpha: 0 },
+        {
+          duration: 1,
+          delay: .3,
+          y: 0,
+          autoAlpha: 1,
+          ease: "expo",
+          overwrite: "auto"
+        }
+      ),
+      toggleActions: "play none none reverse",
+      scrub: 0.5,
+    });
+  });
+  
+}
+
 function InitfooterAnimation(){
+gsap.utils.toArray(".animateFooter").forEach(elem => {
+  gsap.set(elem, { autoAlpha: 0 });
+  
+  ScrollTrigger.create({
+    trigger: elem,
+    start: "top 60%",
+    end: "bottom 20%",
+    animation: gsap.fromTo(
+      elem,
+      { y: 100, autoAlpha: 0 },
+      {
+        duration: 1,
+        delay: .3,
+        y: 0,
+        autoAlpha: 1,
+        ease: "expo",
+        overwrite: "auto"
+      }
+    ),
+    toggleActions: "play none none reverse",
+    markers:true
+  });
+});
 
 }
 
@@ -419,51 +463,48 @@ gsap.set(".about_text_p", { autoAlpha: 0, yPercent: 200 });
 function initsimpleLightbox(){
 
   $('.zoomItem a').simpleLightbox({
-    'showCounter': false,
     'closeText': '<i class="fa fa-times" aria-hidden="true"></i>',
     'navText': ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
     'captions': true, // Abilita le didascalie
     'captionSelector': 'img' ,
     'captionsData': 'alt',
     'fileExt':'webp',
-    'animationSpeed':100,
+    'animationSpeed':200,
     'loop':true,
   });
 
   $('.zoomItemCartoon a').simpleLightbox({
-    'showCounter': false,
     'closeText': '<i class="fa fa-times" aria-hidden="true"></i>',
     'navText': ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
     'captions': true, // Abilita le didascalie
     'captionSelector': 'img' ,
     'captionsData': 'alt',
-    'animationSpeed':100,
+    'animationSpeed':200,
     'disableScroll': true,
     'fileExt':'webp',
     'loop':true,
+
   });
 
   $('.zoomItemSketch a').simpleLightbox({
-    'showCounter': false,
     'closeText': '<i class="fa fa-times" aria-hidden="true"></i>',
     'navText': ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
     'captions': true, // Abilita le didascalie
     'captionSelector': 'img' ,
     'captionsData': 'alt',
     'fileExt':'webp',
-    'animationSpeed':100,
+    'animationSpeed':200,
     'disableScroll': true,
     'loop':true,
   });
 
   $('.zoomItemIll a').simpleLightbox({
-    'showCounter': false,
     'closeText': '<i class="fa fa-times" aria-hidden="true"></i>',
     'navText': ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
     'captions': true, // Abilita le didascalie
     'captionSelector': 'img' ,
     'captionsData': 'alt',
-    'animationSpeed':100,
+    'animationSpeed':200,
     'fileExt': 'webp',
     'disableScroll': true,
     'loop':true,
@@ -576,32 +617,9 @@ function InitDivisorAnim() {
   });
 }
 
-function InitParagraphAnim(){
-    gsap.utils.toArray(".animateP").forEach(elem => {
-      gsap.set(elem, { autoAlpha: 0 });
-      
-      ScrollTrigger.create({
-        trigger: elem,
-        start: "top 95%",
-        end: "bottom 20%",
-        animation: gsap.fromTo(
-          elem,
-          { y: 100, autoAlpha: 0 },
-          {
-            duration: 1,
-            delay: .3,
-            y: 0,
-            autoAlpha: 1,
-            ease: "expo",
-            overwrite: "auto"
-          }
-        ),
-        toggleActions: "play none none reverse",
-        scrub: 0.5,
-      });
-    });
-    
-}
+
+
+
 /* ---------------------- Fire all scripts on page load --------------------- */
 $(document).ready(function() {
   //loader
