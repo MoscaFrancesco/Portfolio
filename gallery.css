@@ -2,45 +2,183 @@
 body {
   margin: 0;
   padding:0 10vw ;
-  font-family: Arial, sans-serif;
+  background-image: url('Resources/PaperTexture-min.webp');
+  background-size: cover;
+  background-repeat: repeat-y;
+  overflow-x: hidden;
 }
+
+
+body *{
+  font-family:'DM Sans',sans-serif;
+  letter-spacing:-3%
+}
+
 
 .header {
   transform: translateX(-10vw);
   position: relative;
   width: 100vw;
   height: 100%;
-  border: solid;
   left: 0px;
-  padding: 10px 30px;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.GalleryHeader{
+background-color: white;
+width: 105px;
+height: 60px;
+border-radius: 52.5px;
+box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
+
+}
+
+.GalleryHeader .inner{
+  background-color: #279eff;
+  width: 95px;
+  height: 50px;
+  margin: 5px;
+  color: white;
+  border-radius: 47.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
 
 }
 
 .circle {
   width: 60px;
   height: 60px;
-  background-color: black;
+  background-color: white;
+  color: black;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
 
 }
+
+.OuterMagneticRange {
+  top:0;
+  width:80px;
+  height:80px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  }
+
 
 .button-row {
-  margin-top: 5vw;
+  margin-top:6vw;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap:3vw;
+  padding: 0 10vw;
 }
 
-.button {
-  flex: 1;
-  padding: 10px;
-  background-color: lightblue;
-  border: none;
+.button-row .newbutton {
+  background-color: #20212c;
+  border-radius: calc(max(4vw, 45px)/2);
+  box-sizing: border-box; 
+  font-size: 1.2vw;
+  font-weight: 600;
+  height: max(4vw, 45px);
+  width: 100%;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
 }
+
+.button-row .hovercolor {
+  z-index: 1;
+  height: 0%;
+  background-color: #279eff;
+  border-radius: 1.7vw;
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  transition: 0.4s cubic-bezier(0.1, 1, 0.6, 1);
+}
+
+.button-row .MagneticChild {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-row .OuterMagneticRange {
+  /* this is the range*/
+  flex:1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vw;
+}
+
+
+.divisore {
+  background:#606060;
+  width:100%;
+  height:3px;
+  border-radius:3px;
+  margin: 3vw 0;
+  }
+
+
+  @media (max-width: 768px) {
+    .button-row {
+      margin: 2.5vw 0;
+      padding: 0;
+      gap:1vw;
+    }
+
+    .button-row .newbutton {
+      height: 6vw;
+      border-radius: 4vw;
+      font-size: 2vw;
+    }
+
+  }
+
+  @media (max-width: 540px) {
+    .button-row {
+      gap:1vw;
+      padding: 0;
+
+    }
+    .button-row .newbutton {
+      height: 6vw;
+      border-radius: 4vw;
+      font-size: 2vw;
+    }
+  }
 
 .section {
   display: none;
-  padding: 20px;
-  background-color: lightgray;
+  background-color: transparent;
 }
 
 .section.active {
@@ -49,17 +187,16 @@ body {
 
 /* ------------------------------ masonry grid ------------------------------ */
 .masonry {
-column-count: 4;
+column-count: 3;
 column-gap: 20px;
 background-color:transparent;
+
 }
 
 .item {
 margin-bottom: 20px;
 position: relative;
 border-radius:0px; 
-overflow: hidden;
-border: solid;
 }
 
 .item > a > img {
@@ -70,7 +207,7 @@ background-size: cover;
 }
 
 .item > a:hover >  img {
- transform: scale(1.05);
+ transform: scale(1.03);
 }
 
 .sl-wrapper > .sl-navigation > button, .sl-wrapper > .sl-close {
@@ -96,14 +233,9 @@ text-align: center;
 }
 }
 
-@media (max-width: 768px) {
-.masonry {
-  column-count: 2;
-}
-}
-
 @media (max-width: 540px) {
 .masonry {
   column-count: 1;
 }
 }
+
