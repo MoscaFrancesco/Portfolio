@@ -8,6 +8,7 @@ function changeSection(sectionNumber) {
   document.getElementById(`section${sectionNumber}`).classList.add('active');
 }
 
+
 /* ------------ Funzione per aggiungere le immagini alla griglia ------------ */
 function populateGrid(data, section) {
   const grid = section.querySelector(".masonry");
@@ -31,6 +32,9 @@ function populateGrid(data, section) {
 
 /* ----------------------------- fire al script ----------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
+  initMagneticButtons()
+
+
   const sections = document.querySelectorAll('.section');
 
   fetch('imageData.json')
@@ -43,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // Inizializza SimpleLightbox dopo aver popolato la griglia con le immagini
-      $('.item a').simpleLightbox({
+      function initializeSimpleLightbox(masonryId) {
+      $(masonryId + ' .item a').simpleLightbox({
         'showCounter': false,
         'closeText': '<i class="fa fa-times" aria-hidden="true"></i>',
         'navText': ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>'],
@@ -54,10 +59,20 @@ document.addEventListener("DOMContentLoaded", () => {
         'animationSpeed': 100,
         'loop': true,
       });
+      }
+
+      initializeSimpleLightbox('#masonry-1');
+      initializeSimpleLightbox('#masonry-2');
+      initializeSimpleLightbox('#masonry-3');
+      initializeSimpleLightbox('#masonry-4');  
     })
+  
     .catch(error => {
       console.error('Errore nel caricamento dei dati JSON:', error);
     });
+
+    
+
 
 
 
@@ -82,6 +97,53 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById(`section1`).classList.remove('active')    
 
           }
-
-
 });
+
+function initMagneticButtons() {
+  $(".magnetic").each(function() {
+    const OuterMagneticRange = $(this).closest(".OuterMagneticRange");
+    OuterMagneticRange.on("mousemove", moveMagnet);
+    OuterMagneticRange.on("mouseleave", resetMagnet);
+  });
+
+  function moveMagnet(event) {
+    const hoverColor = $(this).find(".hovercolor");
+    if (hoverColor.length > 0) {
+      hoverColor.css({
+        height: "100%",
+        top: "auto"
+      });
+    }
+
+    const magnetButton = $(this).find(".magnetic");
+    const ButtonText = magnetButton.find(".MagneticChild");
+    const bounding = magnetButton[0].getBoundingClientRect();
+    const magnetsStrength = parseInt(magnetButton.data("strength"), 10);
+
+    gsap.to([magnetButton, ButtonText], 1.5, {
+      x: ((event.clientX - bounding.left) / magnetButton.width() - 0.5) * magnetsStrength,
+      y: ((event.clientY - bounding.top) / magnetButton.height() - 0.5) * magnetsStrength,
+      rotate: "0.001deg",
+      ease: "power4.out"
+    });
+  }
+
+  function resetMagnet(event) {
+    const hoverColor = $(this).find(".hovercolor");
+    if (hoverColor.length > 0) {
+      hoverColor.css({
+        height: "0%",
+        top: "0%"
+      });
+    }
+
+    const magnetButton = $(this).find(".magnetic");
+    const ButtonText = magnetButton.find(".MagneticChild");
+
+    gsap.to([magnetButton, ButtonText], 1.5, {
+      x: 0,
+      y: 0,
+      ease: "elastic.out(1, 0.3)"
+    });
+  }
+}
