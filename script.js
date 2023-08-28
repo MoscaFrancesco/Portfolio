@@ -63,6 +63,7 @@ function initHeader(){
 
 //Social Card (left) 
 function initSocialButton(){
+  
 
     function Social() {
       gsap.to($("#SocialButton, #SocialButton .MagneticChild"), 1.5, {
@@ -89,7 +90,9 @@ function initSocialButton(){
   
     $("#SocialButton").on("click", Social);
 }
-  
+
+let animationExecuted = false; // Variabile per tenere traccia dello stato dell'animazione
+
 //Change section ---IN PROGRESS---
 function initChangeSection(){
 
@@ -123,6 +126,7 @@ let isTransitioning = false; // Aggiunto per gestire lo stato di transizione
 function fadeIn(element) {
   element.css({ display: 'flex', opacity: 1 });
   $('footer').css({ opacity: 1 });
+  
 }
 
 function fadeOut(element) {
@@ -156,10 +160,15 @@ function fadeOutInTransition(selectedContentId) {
     fadeIn(selectedContent);
     selectedContent.addClass('active');
 
+    //per piazzare il footer
     if ($('.active') && $('.active').attr('id') === 'content-1') {
       $('footer').css({ transform: 'translateY(250vh)' });
     } else {
       $('footer').css({ transform: 'translateY(0)' });
+      if (!animationExecuted) {
+        InitDivisorAnim(); // Chiamata a InitDivisorAnim() solo se non è già stata eseguita
+        animationExecuted = true; // Imposta lo stato dell'animazione su "eseguita"
+      }
     }
 
     isTransitioning = false; // Resetta lo stato di transizione
@@ -171,11 +180,16 @@ function fadeOutInTransition(selectedContentId) {
 
 //evento on change
 $('input[name="tabsSelection"]').on('change', function () {
-  history.scrollRestoration = 'manual';
-  window.scrollTo(0, 0);
   $('.ScrollDots').css('position', 'absolute');
   const selectedContentId = this.id.replace('radio', 'content');
   fadeOutInTransition(selectedContentId);
+
+
+  setTimeout(function () {
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, overlayDelay)
+
 });
 
 //cambio sezione manuale
@@ -235,8 +249,8 @@ function initWelcomeSlider(){
 function initSmoothScroll(){
   const lenis = new Lenis({
     duration:0.8,
-    //smoothWheel:false,
-    //smoothTouch:false,
+    smoothWheel:true,
+    smoothTouch:true,
   });
 
 lenis.on('scroll', (e) => {
@@ -300,11 +314,11 @@ function InitImageAnimation(){
   const image = document.querySelector('.FirstWrapper img:nth-child(3)');
 
     gsap.fromTo(image,{
-      x: '4%',
+      x: '10%',
     },  {
       x: '0%',
 
-      ease: "ease.inOut",
+      ease: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
       scrollTrigger: {
         trigger: image,
         start: 'top center',
@@ -316,10 +330,10 @@ function InitImageAnimation(){
     const image2 = document.querySelector('.SecondWrapper img:nth-child(1)');
 
     gsap.fromTo(image2,{
-      x: '-4%',
+      x: '-10%',
     },  {
       x: '0%',
-      ease: "ease.inOut",
+      ease: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
       scrollTrigger: {
         trigger: image2,
         start: 'top center',
@@ -519,41 +533,80 @@ function initLinks(){
 });
 }
 
+function InitDivisorAnim() {
 
-    
+  const elementsLabelDivisore = document.querySelectorAll(".LabelDivisore");
+  const elementsDivisore = document.querySelectorAll(".divisore");
+  
+  elementsLabelDivisore.forEach((element) => {
+    const tl = gsap.timeline();
+    tl.from(element, {
+      opacity: 0,
+      y: 30,
+      duration: 0.2,
+      ease: "power2.inOut"
+    });
+
+    ScrollTrigger.create({
+      trigger: element,
+      start: "top 80%",
+      end: "bottom 80%",
+      animation: tl,
+      toggleActions: "play none none reverse",
+    });
+  });
+
+  elementsDivisore.forEach((element, index) => {
+    const label = elementsLabelDivisore[index];
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: label,
+        start: "top 80%",
+        end: "bottom 80%",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    tl.fromTo(
+      element,
+      { width: '0px' },
+      { width: "100%", duration: 0.5, ease: "power2.inOut" }
+    );
+  });
+}
+
 /* ---------------------- Fire all scripts on page load --------------------- */
 $(document).ready(function() {
   //loader
   //initLoader() devo rimettere top a 0 nel css e va tolto anche il commento da beforeunload, oltre che rimettere il timer a 2300
-
   initWelcomeSlider()
 
-
-  //header
   initHeader()
   initSocialButton()
   initChangeSection()
   initMenuButton()
   InitfooterAnimation()
   InitImageAnimation()
-  InitCitAnimation()
-        
-      initSmoothScroll()
-      initParallax() 
-      initMagneticButtons()
-      initLinks()
+  initParallax() 
+  initsimpleLightbox()
+  InitDivisorAnim()
+
+
+
 
   setTimeout(function() { //run after the loader 
       $("body").css("overflow-y", "visible");
 
-      if(window.innerWidth > 540){
-      //
-
+      if(window.innerWidth > 768){
+      InitCitAnimation()
+      //initSmoothScroll()
+      initMagneticButtons()
+      initLinks()
       }
     }, 0); //va a 2300
 
-  //Works
-  initsimpleLightbox()
+
 });
 
 //beforeUnload
