@@ -42,6 +42,23 @@ body::-webkit-scrollbar {
   height: auto;
 }
 
+#content-1.active{
+  margin-bottom: 320vh;
+}
+
+#content-2.active{
+  margin-bottom: 70vh;
+}
+
+
+#content-1.active ~ footer{
+  transform: translateY(250vh);
+}
+
+#content-2.active ~ footer{
+  transform: translateY(0vh);
+}
+
 /* The white Screen between transition from About Me ---> Work*/
 .transition-overlay {
   position: fixed;
@@ -683,6 +700,7 @@ justify-content:center
 .AboutMe .LastImgWrapper .OuterMagneticRange img {
   transform: translateX(-2.9%) translateY(1.7%) scaleY(0.98);
   z-index: 0;
+
 }
 
 
@@ -766,7 +784,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
-padding:20vw 5vh;
+padding:15vw 5vh;
 }
 
 .FraseCelebre .about_text  {
@@ -1169,14 +1187,14 @@ letter-spacing:-3%
 /* ------------------------- SimpleLightbox General ------------------------- */
 
 /* close button and arrow */
-.sl-wrapper > .sl-navigation > button , .sl-wrapper > .sl-close {
+.sl-wrapper > .sl-navigation > button , .sl-wrapper > .sl-close, .sl-counter  {
   color:white !important;
   padding:0 3.5vw
   }
-  
   /* background of full page visualization */
   .sl-overlay {
   background-color:#20232c !important;
+  pointer-events:none !important
   }
   
   /* caption ---> you must have to add an alt attribute to <img> to see caption */
@@ -1529,8 +1547,13 @@ object-fit:cover
 
 
 /* --------------------------------- footer --------------------------------- */
+
+
+
+
 footer{
-  transform: translateY(250vh);
+  position: fixed;
+  bottom: 0px;
   height: 70vh; 
   width: 100%;
   box-sizing: border-box;
@@ -1544,6 +1567,8 @@ footer{
   justify-content: center;
   font-family:'DM Sans',sans-serif;
   letter-spacing: -3%;
+  z-index: -1;
+
 }
 
 
@@ -1557,6 +1582,7 @@ footer .SocialContact{
   align-items: center;
   justify-content: center;
   gap: 0px;
+  
 }
 
 footer .SocialContact h1{
@@ -1572,6 +1598,8 @@ footer .SocialContact .divider{
   transform: translateX(5%);
   height: 3px;
   margin:1.5vw 0;
+  box-shadow:rgba(0,0,0,0.16) 0 8px 32px;
+
 }
 
 footer .SocialButtons {
@@ -1596,6 +1624,8 @@ footer .SocialButtons .icon {
   flex-direction: column;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow:rgba(0,0,0,0.16) 0 4px 32px;
+
 }
 
 
@@ -1636,7 +1666,7 @@ footer .SocialButtons .tooltip::before {
 }
 
 footer .SocialButtons .icon:hover .tooltip {
-  bottom: -35px;
+  bottom: -45px;
   opacity: 1;
   transition-delay: 0.3s;
   visibility: visible;
@@ -1785,7 +1815,7 @@ footer .icon i {
     font-size: 16px;
     display: flex;
     position: absolute;
-    overflow: hidden;
+    box-shadow:rgba(0,0,0,0.16) 0 4px 32px;
 
 
   }
