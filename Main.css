@@ -437,7 +437,8 @@ top:15px
 .SliderContent{
   background-image: url("Resources/Scritta.webp");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 80%;
+  background-position: center;
 }
 
 .OverlaySlider{
@@ -468,6 +469,46 @@ top:15px
 }
 
 
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.arrow-top,
+.arrow-bottom {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-top {
+  animation: scroll 2s infinite;
+}
+
+.arrow-bottom {
+  position:relative;
+  top:-15px;
+  animation: scroll 2s infinite;
+  animation-delay: 0.1s;
+}
+
+@keyframes scroll {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+}
+
+
 
 /* ------------------------------ OtherContent ------------------------------ */
 #OtherContent {
@@ -490,16 +531,16 @@ letter-spacing:-3%
 .LabelDivisore {
 margin-top:6vw;
 font-size:1.3em;
-color:#606060;
+color:#616161;
 width:100%;
 
 }
 
 /* actual divider orizzontal line */
 .divisore {
-background:#606060;
+background-color:#616161;
 width:100%;
-height:3px;
+height:2px;
 border-radius:3px;
 position: relative;
 }
@@ -1060,12 +1101,15 @@ position: relative;
 /* ---------------------------------- Works --------------------------------- */
 /* ---------------------------------- Works --------------------------------- */
 
+.fa-chevron-left, .fa-chevron-right, .fa-times{
+  transform: scale(0.7);
+}
 
 /* actual divider orizzontal line */
 #content-2 .divisore {
-  background:#606060;
+  background:#616161;
   width:100%;
-  height:3px;
+  height:2px;
   border-radius:3px;
   margin-bottom: 3vw;
   }
@@ -1682,31 +1726,34 @@ footer .SocialButtons .icon:hover .tooltip {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-footer .SocialButtons .facebook:hover,
-footer .SocialButtons .facebook:hover .tooltip,
-footer .SocialButtons .facebook:hover .tooltip::before {
+footer .SocialButtons .Instagram:hover,
+footer .SocialButtons .Instagram:hover .tooltip{
+  background-image:linear-gradient(163deg, #4964da 0%, rgba(146, 73, 221, 0.8) 11.8%, rgba(176, 60, 196, 0.6) 23.6%, rgba(192, 55, 173, 0.4) 35.4%, rgba(217, 46, 116, 0) 59%), radial-gradient(100% 100% at 10% 100%, #fdd575 26%, #fcc06a 36.57%, #fbaa63 47.14%, #f99262 57.71%, #f77868 68.29%, #f55973 78.86%, #d22e8c 100%);
+  color: #fff;
+}
+
+footer .SocialButtons .Instagram:hover .tooltip::before{
+  background-color: #a341c9;
+}
+
+footer .SocialButtons .Behance:hover,
+footer .SocialButtons .Behance:hover .tooltip,
+footer .SocialButtons .Behance:hover .tooltip::before {
   background: #1877F2;
   color: #fff;
 }
 
-footer .SocialButtons .twitter:hover,
-footer .SocialButtons .twitter:hover .tooltip,
-footer .SocialButtons .twitter:hover .tooltip::before {
-  background: #1DA1F2;
+footer .SocialButtons .Pinterest:hover,
+footer .SocialButtons .Pinterest:hover .tooltip,
+footer .SocialButtons .Pinterest:hover .tooltip::before {
+  background: #e60023;
   color: #fff;
 }
 
-footer .SocialButtons .instagram:hover,
-footer .SocialButtons .instagram:hover .tooltip,
-footer .SocialButtons .instagram:hover .tooltip::before {
-  background: #E4405F;
-  color: #fff;
-}
-
-footer .SocialButtons .tiktok:hover,
-footer .SocialButtons .tiktok:hover .tooltip,
-footer .SocialButtons .tiktok:hover .tooltip::before {
-  background: #20232c;
+footer .SocialButtons .YouTube:hover,
+footer .SocialButtons .YouTube:hover .tooltip,
+footer .SocialButtons .YouTube:hover .tooltip::before {
+  background: #ff0000;
   color: #fff;
 }
 
@@ -1826,11 +1873,11 @@ footer .icon i {
     z-index: 5;
     height: 100%;
     width: 100%;
-    background-image: url("Resources/Firma.webp");
+    background-image: url("Resources/Firma-1.webp");
     background-repeat: no-repeat;
     background-size: contain;
     background-size: 70%;
-    background-position: 40% center;
+    background-position: 50% center;
   }
   
   footer > .OuterMagneticRange {
@@ -1844,6 +1891,15 @@ footer .icon i {
     position: absolute;
     left: 62vw;
     top:calc(25% - 8vw)
+  }
+
+  .SocialContact .SocialButtons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
   
 
