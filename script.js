@@ -640,7 +640,7 @@ $(document).ready(function() {
   setTimeout(function() { //run after the loader 
       $("body").css("overflow-y", "visible");
 
-      if(window.innerWidth > 768){
+      if(window.innerWidth > 992){
       InitCitAnimation()
       initSmoothScroll()
       initMagneticButtons()
