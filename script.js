@@ -240,25 +240,7 @@ function initWelcomeSlider(){
 
 /* ------------------------------ First Section ----------------------------- */
 
-function initSmoothScroll(){
-  const lenis = new Lenis({
-    duration:1,
-    smoothWheel:true,
-    smoothTouch:true,
-  });
 
-lenis.on('scroll', (e) => {
-  console.log(e)
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf)
-
-}
 
 function initParallax(){
   var winScrollTop = 0;
