@@ -640,7 +640,7 @@ $(document).ready(function() {
   setTimeout(function() { //run after the loader 
       $("body").css("overflow-y", "visible");
 
-      if(window.innerWidth > 1280){
+      if(('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0) || (navigator.maxTouchPoints > 0)) {
       InitCitAnimation()
       initSmoothScroll()
       initMagneticButtons()
